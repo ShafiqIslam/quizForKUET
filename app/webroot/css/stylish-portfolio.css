@@ -45,7 +45,11 @@ button:focus{
 }
 
 .quiz_switch_btn{
-    margin-top: 10%;
+    margin-top: 8%;
+}
+.quiz_switch_btn .fa{
+    padding-left: 10px;
+    //color: rgba(255, 255, 255, 0.48);
 }
 
 .btn_user{
