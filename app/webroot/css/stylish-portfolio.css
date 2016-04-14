@@ -216,7 +216,28 @@ button:focus{
     width: 100%;
     height: 100%;
 }
-
+#signup .control-label{
+    text-align: left !important;
+    font-size: 17px;
+}
+#signup .form-group {
+    margin-bottom: 8px;
+}
+.form-group:last-child{
+    padding-bottom: 60px;
+}
+.btn_signup {
+    margin-top: 10px;
+}
+.btn_login{
+    margin-bottom: -10px;
+}
+.form-control {
+    font-size: 17px;
+}
+.modal{
+    font-family: sans-serif;
+}
 /*-------------input radio button-------------------------*/
 
 *,

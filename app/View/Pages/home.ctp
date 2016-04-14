@@ -1,8 +1,10 @@
 <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-center user_btn">
-            <button type="button" class="btn btn_user  btn_signup" data-toggle="modal" data-target="#signup">SIGNUP</button>
-            <button type="button" class="btn btn_user btn_login" data-toggle="modal" data-target="#login">LOGIN</button>
+        <div>
+            <div class="text-vertical-center user_btn">
+                <button type="button" class="btn btn_user  btn_signup" data-toggle="modal" data-target="#signup">SIGNUP</button>
+                <button type="button" class="btn btn_user btn_login" data-toggle="modal" data-target="#login">LOGIN</button>
+            </div>
 
             <!-- Modal -->
             <div id="signup" class="modal fade" role="dialog">
@@ -12,7 +14,7 @@
                 <div class="modal-content">
                 	<div class="modal-header">
                         <button type="button" class="close" style="font-size: 50px;" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">SIGNUP</h2>
+                        <h2 class="modal-title text-center">SIGNUP</h2>
                     </div>
                     <div class="modal-body">
                         <form method="post" action="#" role="form">
@@ -45,7 +47,7 @@
                                 <input type="password" name="con_pass" class="form-control" id="con_pass" placeholder="Confirm Password">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn_user  btn_signup">SUBMIT</button>
+                                <button type="submit" class="btn btn_user  btn_signup pull-right">SUBMIT</button>
                             </div>
                         </form>
                     </div>
@@ -63,7 +65,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" style="font-size: 50px;" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">LOGIN</h2>
+                        <h2 class="modal-title text-center">LOGIN</h2>
                     </div>
                     <div class="modal-body">
                         <form method="post" action="#" role="form">
@@ -76,7 +78,7 @@
                                 <input type="password" name="pass" class="form-control" id="pass" placeholder="Password">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn_user  btn_signup">LOGIN</button>
+                                <button type="submit" class="btn btn_user btn_signup pull-right">LOGIN</button>
                             </div>
                         </form>
                     </div>
