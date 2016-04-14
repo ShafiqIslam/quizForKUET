@@ -17,18 +17,18 @@
                         <h2 class="modal-title text-center">SIGNUP</h2>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="#" role="form">
+                    <form role="form" data-toggle="validator" id="signup_form" method="post" action="#">
                             <div class="form-group">
                                 <label class="control-label" for="first anme">First Name:</label>
-                                <input type="text" name="f_name" class="form-control" id="f_name" placeholder="First Name">
+                                <input type="text" name="f_name" class="form-control" id="f_name" placeholder="First Name" required="">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="Last Nmae">Last Name:</label>
-                                <input type="text" name="l_name" class="form-control" id="l_name" placeholder="Last Name">
+                                <input type="text" name="l_name" class="form-control" id="l_name" placeholder="Last Name" required="">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="status">Status:</label>
-                                <select name="status" class="form-control">
+                                <select name="status" class="form-control" required="">
                                     <option>Select Status</option>
                                     <option value="teacher">Teacher</option>
                                     <option value="student">Student</option>
@@ -36,15 +36,18 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="email">Email:</label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Email Name">
+                                <input type="email" name="email" pattern="^[_A-z0-9]{1,}$" class="form-control" id="email" placeholder="Email Name" data-error="Bruh, that email address is invalid" required="">
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password:</label>
-                                <input type="password" name="pass" class="form-control" id="pass" placeholder="Password">
+                                <input type="password" data-minlength="6" name="pass" class="form-control" id="pass" placeholder="Password" required="">
+                                <div class="help-block">Minimum of 6 characters</div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="confirm password">Confirm Password:</label>
-                                <input type="password" name="con_pass" class="form-control" id="con_pass" placeholder="Confirm Password">
+                                <input type="password" name="con_pass" class="form-control" id="con_pass" data-match="#pass" placeholder="Confirm Password" data-match-error="Whoops, these don't match" required="">
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn_user  btn_signup pull-right">SUBMIT</button>
@@ -57,6 +60,7 @@
                 </div>
             </div>
 
+
             <!-- Modal Login -->
             <div id="login" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -68,7 +72,7 @@
                         <h2 class="modal-title text-center">LOGIN</h2>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="#" role="form">
+                        <form data-toggle="validator" method="post" action="#" role="form">
                             <div class="form-group">
                                 <label class="control-label" for="email">Email:</label>
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Email Name">

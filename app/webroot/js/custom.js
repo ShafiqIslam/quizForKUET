@@ -28,3 +28,19 @@ $(document).ready(function() {
         });
     });
 });
+
+$(document).ready(function(){
+    function validate_form () {
+        var error = 0;
+        $('#signup_form div.form-group').each(function() {
+            if($(this).hasClass('has-error')) {
+                error = 1;
+                $('#signup_form').find('button[type=submit]').prop('disabled', true);
+            }
+        });
+
+        if(!error) {
+            $('#signup_form').find('button[type=submit]').removeAttr('disabled');
+        }
+    }
+})
