@@ -18,9 +18,9 @@
     <?php
             echo $this->Html->meta('icon');
             //echo $this->Html->css('cake.generic');
-            echo $this->Html->css(array('bootstrap', 'stylish-portfolio'));
+            echo $this->Html->css(array('bootstrap','normalize', 'stylish-portfolio'));
 
-            echo $this->Html->script(array('jquery', 'custom'));
+            echo $this->Html->script(array('jquery', 'modernizr.custom', 'svgcheckbx', 'custom'));
         ?>
         
         <?php
@@ -29,17 +29,6 @@
             echo $this->fetch('script');
         ?>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    
-
-    <!-- Custom Fonts -->
-    
-    <!--<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />-->
-	<!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -86,9 +75,9 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
+                <div class="col-lg-12">
                 	<div class="pull-right">
-	                	<ul class="list-inline">
+	                	<ul class="list-inline social_logo">
 	                        <li>
 	                            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
 	                        </li>
