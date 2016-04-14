@@ -1,6 +1,6 @@
 <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-center">
+        <div class="text-vertical-center user_btn">
             <button type="button" class="btn btn_user  btn_signup" data-toggle="modal" data-target="#signup">SIGNUP</button>
             <button type="button" class="btn btn_user btn_login" data-toggle="modal" data-target="#login">LOGIN</button>
 
@@ -85,21 +85,7 @@
                 </div>
             </div>
         </div>
-    </header>
-
-
-    <!-- Trigger the modal with a button -->
-
-
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <a class="btn btn_user"  href="<?php echo $this->webroot;?>quiz_page">START QUIZ</a>
-                </div>
-            </div>
-            <!-- /.row -->
+        <div class="text-vertical-center quiz_switch_btn">
+            <a class="btn btn_user"  href="<?php echo $this->webroot;?>quiz_page">START QUIZ</a>
         </div>
-        <!-- /.container -->
-    </section>
+    </header>
