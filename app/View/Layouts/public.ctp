@@ -20,7 +20,7 @@
             //echo $this->Html->css('cake.generic');
             echo $this->Html->css(array('bootstrap','normalize', 'stylish-portfolio'));
 
-            echo $this->Html->script(array('jquery','bootstrap', 'bootstrapValidator.min', 'modernizr.custom', 'svgcheckbx', 'custom'));
+            echo $this->Html->script(array('jquery','bootstrap', 'modernizr.custom',));
         ?>
         
         <?php
@@ -96,7 +96,9 @@
             </div>
         </div>
     </footer>
-
+    <?php
+        echo $this->Html->script(array('bootstrapValidator.min', 'validator.min', 'custom'));
+    ?>
 </body>
 
 </html>
