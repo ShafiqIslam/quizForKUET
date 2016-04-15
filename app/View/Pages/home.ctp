@@ -17,7 +17,7 @@
                         <h2 class="modal-title text-center">SIGNUP</h2>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="#" role="form">
+                        <form method="post" action="<?php echo $this->webroot;?>teachers/signup" role="form">
                             <div class="form-group">
                                 <label class="control-label" for="first anme">First Name:</label>
                                 <input type="text" name="f_name" class="form-control" id="f_name" placeholder="First Name">
