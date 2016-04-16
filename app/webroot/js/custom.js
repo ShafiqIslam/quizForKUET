@@ -36,4 +36,26 @@ $(document).ready(function(){
             $('#signup_form').find('button[type=submit]').removeAttr('disabled');
         }
     }
-})
+});
+
+
+/*-----------------JS Slider------------------*/
+/*
+$('.slider').jSlides({
+    img1: {h2:'Slide 1', h3:'I am slide 1'},
+    img2: {h2:'Slide 2', h3:'I am slide 2'},
+    img3: {h2:'Slide 3', h3:'I am slide 3'},
+    img1: {h2:'Slide 4', h3:'I am slide 4'},
+    autoplay: true,
+    time: 3000,
+    width:500,
+    height: 400,
+
+});
+*/
+
+$('#slideshow').dsSlider({
+  duration: 10000, // in ms
+  direction: "right" // or 'left'
+});
+

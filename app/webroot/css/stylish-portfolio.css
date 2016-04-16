@@ -29,6 +29,70 @@ body {
     font-weight: 700;
 }
 
+header h1{
+    font-size: 45px;
+    color: #fff;
+    //margin: 10% 0% 3% 3%;
+}
+header .greet{
+    font-style: italic;
+}
+
+
+/*--------Slider CSS------------*/
+ul.slides {
+    list-style: none;
+    padding: 0;
+    margin: 10% 0 0 0;
+    position: fixed;
+    width: 41%;
+    right: 0;
+}
+
+ul.slides li {
+  margin: 0;
+  background: rgba(10, 10, 90, 0.5);
+  padding: 3% 10% 10% 10%;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-content: center;
+  justify-content: justify;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 0;
+  right: -100%;
+  float: left;
+  //left: 100%;
+  bottom: 0;
+  z-index: 8;
+  transition: transform 1.4s cubic-bezier(0.01, 1, 0.91, 1) 0.5s;
+}
+ @media all and (//max-width: 760px) {
+
+ul.slides li { font-size: 20vw; }
+}
+
+ul.slides li.active { z-index: 10; }
+
+ul.slides li.active.slide-left { transform: translate3d(100%, 0, 0); }
+
+ul.slides li.active.slide-right { transform: translate3d(-100%, 0, 0); }
+
+ul.slides li.last-active { z-index: 9; }
+
+ul.slides li:first-child {
+  left: 0;
+  opacity: 1;
+}
+.slide-content h3{
+    //margin-top: -20px;
+}
+
+
 
 /* Custom Horizontal Rule */
 
@@ -40,8 +104,13 @@ button:focus{
     outline: none;
 }
 
+#menu-toggle{
+    color: #fff;
+    border : 1px solid #fff;
+}
+
 .user_btn{
-    margin-top: 24%;
+   // margin: 24%;
 }
 
 .quiz_switch_btn{
@@ -181,7 +250,7 @@ button:focus{
     display: table;
     position: relative;
     width: 100%;
-    height: 93%;
+    height: 90%;
     background: url(../img/bg-2.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -461,6 +530,7 @@ footer .social_logo{
     box-shadow: 0px 0px 4px black;
     padding: 0px 0px;
     margin-top: 2%;
+    position: absolute;
 }
 #flashMessage{
     font-size: 18px;

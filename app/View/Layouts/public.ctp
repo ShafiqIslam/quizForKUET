@@ -19,7 +19,7 @@
             echo $this->Html->meta('icon');
             //echo $this->Html->css('cake.generic');
             echo $this->Html->css(array('bootstrap','normalize', 'stylish-portfolio'));
-            echo $this->Html->script(array('jquery','bootstrap', 'modernizr.custom'));
+            echo $this->Html->script(array('jquery','bootstrap','slider', 'modernizr.custom'));
         ?>
         
         <?php
@@ -76,9 +76,9 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-sm-12">
                 	<div class="pull-right">
 	                	<ul class="list-inline social_logo">
 	                        <li>
