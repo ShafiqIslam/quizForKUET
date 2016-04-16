@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-04-15 16:50:03
+Date: 2016-04-16 23:50:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -93,11 +93,12 @@ CREATE TABLE `teachers` (
   `email` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `designation` varchar(255) DEFAULT NULL,
-  `created` varchar(255) DEFAULT NULL,
-  `modified` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of teachers
 -- ----------------------------
+INSERT INTO `teachers` VALUES ('1', null, null, '51146e8937d270661ba59cb612cb512d18c3bbef', 'CSE', 'test@gmail.com', 'Test', 'Lecturer', '2016-04-16 18:49:16', '2016-04-16 18:49:16');
