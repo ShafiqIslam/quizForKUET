@@ -19,8 +19,7 @@
             echo $this->Html->meta('icon');
             //echo $this->Html->css('cake.generic');
             echo $this->Html->css(array('bootstrap','normalize', 'stylish-portfolio'));
-
-            echo $this->Html->script(array('jquery','bootstrap', 'modernizr.custom',));
+            echo $this->Html->script(array('jquery','bootstrap', 'modernizr.custom'));
         ?>
         
         <?php
@@ -42,34 +41,38 @@
 <body>
 
     <!-- Navigation -->
+    <?php if(!empty($is_logged)) { ?>
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
+                <a href="<?php echo $this->webroot;?>exams/new">Menu</a>
             </li>
             <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+                <a href="<?php echo $this->webroot;?>exams/new">Create new quiz</a>
             </li>
             <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+                <a href="<?php echo $this->webroot;?>emams/my_exams">My quizzes</a>
             </li>
             <li>
-                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
-            </li>
-            <li>
-                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
-            </li>
-            <li>
-                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+                <a href="<?php echo $this->webroot;?>teachers/logout">Logout</a>
             </li>
         </ul>
     </nav>
+    <?php } ?>
+
+    <?php $flash = $this->Session->flash('flash'); ?>
+    <?php if(!empty($flash)) { ?>
+        <div class="container flash_message">
+            <?php echo $flash;?>
+            <button class="flash_close_btn"><span><i class="fa fa-times fa-2x"></i></span></button>
+        </div>
+    <?php } ?>
 
 
     <!--Calling the content of the body  -->
-        <?php echo $this->fetch('content'); ?>
+    <?php echo $this->fetch('content'); ?>
 
     <!-- Footer -->
     <footer>

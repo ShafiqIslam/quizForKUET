@@ -452,3 +452,35 @@ footer p{
 footer .social_logo{
     margin: 13px 0 0 10px;
 }
+
+/*-----------Flash Message--------*/
+
+.flash_message{
+    background: transparent;
+    z-index: 100;
+    box-shadow: 0px 0px 4px black;
+    padding: 0px 0px;
+    margin-top: 2%;
+}
+#flashMessage{
+    font-size: 18px;
+    color:#fff;
+    text-align: center;
+    padding: 20px 0px;
+}
+.flash_close_btn{
+    float: right;
+    margin-top: -5.3%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.success_msg {
+    background: green;
+}
+
+.error_msg {
+    background: red;
+}

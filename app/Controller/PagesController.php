@@ -66,6 +66,13 @@ class PagesController extends AppController {
 		}
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 
+		$logged = $this->Session->read('logged');
+		if(!empty($logged)) {
+			$is_logged = $logged['is_logged'];
+			$name_with_des = $logged['name_with_des'];
+			$this->set(compact('is_logged', 'name_with_des'));
+		}
+
 		try {
 			$this->render(implode('/', $path));
 		} catch (MissingViewException $e) {
