@@ -76,7 +76,7 @@
     <?php echo $this->fetch('content'); ?>
 
     <!-- Footer -->
-    <!--<footer>
+    <footer>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-    </footer>-->
+    </footer>
 
     <?php echo $this->Html->script(array('bootstrapValidator.min', 'validator.min', 'custom')); ?>
 </body>

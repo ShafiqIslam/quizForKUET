@@ -8,15 +8,12 @@
                         <h1>Play And Create Quizes</h1>
                         <h2>Enhance Your Memory</h2>
                     </div>
-                    <div class="user_section">
-                        <div class="text-vertical-center user_btn">
-                            <button type="button" class="btn btn_user  btn_signup" data-toggle="modal" data-target="#signup">SIGNUP</button>
-                        </div>
-                        <div class="text-vertical-center user_btn">
-                            <button type="button" class="btn btn_user btn_login" data-toggle="modal" data-target="#login">LOGIN</button>
+                    <div class="login_signup">
+                        <div class="user_section">
+                            <a href="#signup" data-toggle="modal" data-hover="SIGNUP"><span>SIGNUP</span></a>
+                            <a href="#login" data-toggle="modal" data-hover="LOGIN"><span>LOGIN</span></a>
                         </div>
                     </div>
-
                     <!-- Modal -->
                     <div id="signup" class="modal fade" role="dialog">
                         <div class="modal-dialog">
@@ -104,9 +101,11 @@
                         </div>
                     </div>
                     <?php } else { ?>
-                        <div class="">
+                        <div class="welcome_quiz_page">
                             <h1><span class="greet">Welcome,</span> <br><sapn calss="greet_to"><?php echo $name_with_des;?></sapn></h1>
-                            <a class="btn btn_user" href="<?php echo $this->webroot;?>new_quiz">CREATE A QUIZ NOW</a>
+                            <div class="user_section qz_crt_btn">
+                                <a data-hover="CREATE A QUIZ NOW" href="<?php echo $this->webroot;?>new_quiz"><span>CREATE A QUIZ NOW</span></a>
+                            </div>
                         </div>
                     <?php } ?>
 
