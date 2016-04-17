@@ -106,7 +106,7 @@
                     <?php } else { ?>
                         <div class="">
                             <h1><span class="greet">Welcome,</span> <br><sapn calss="greet_to"><?php echo $name_with_des;?></sapn></h1>
-                            <a class="btn btn_user" href="<?php echo $this->webroot;?>quiz_page">CREATE A QUIZ NOW</a>
+                            <a class="btn btn_user" href="<?php echo $this->webroot;?>new_quiz">CREATE A QUIZ NOW</a>
                         </div>
                     <?php } ?>
 
