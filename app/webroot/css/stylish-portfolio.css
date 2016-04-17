@@ -1,8 +1,5 @@
 /*!
- * Start Bootstrap - Stylish Portfolio Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+
 
 /* Global Styles */
 
@@ -425,7 +422,6 @@ button:focus{
     transition: color 0.3s;
 }
 
-.ac-custom input[type="checkbox"],
 .ac-custom input[type="radio"],
 .ac-custom label::before {
     width: 43px;
@@ -565,13 +561,49 @@ button:focus{
     margin-top: 30px
 }
 
-/* Media Queries */
-@media screen and (max-width: 50em) {
-    section {
-        font-size: 80%;
-    }
+
+/*------------ New Exam Page----------*/
+.custom_checkbox label{
+    vertical-align: middle;
+}
+.checkbox-custom{
+    opacity: 0;
+    position: absolute;   
 }
 
+.checkbox-custom, .checkbox-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 5px 5px 0px;
+    cursor: pointer;
+}
+
+.checkbox-custom-label{
+    position: relative;
+}
+
+.checkbox-custom + .checkbox-custom-label:before{
+    content: '';
+    background: #fff;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    background: rebeccapurple;
+}
+
+
+
+.checkbox-custom:focus + .checkbox-custom-label{
+  outline: 1px solid #ddd; /* focus style */
+}
 /* Footer */
 
 footer {
