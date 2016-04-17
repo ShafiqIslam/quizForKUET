@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-04-16 23:50:07
+Date: 2016-04-17 13:11:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,16 +28,19 @@ CREATE TABLE `exams` (
   `time` int(3) DEFAULT NULL,
   `starting_at` datetime DEFAULT NULL,
   `marks_per_ques` int(2) DEFAULT NULL,
+  `negate` tinyint(1) DEFAULT NULL,
   `total_ques` int(3) DEFAULT NULL,
   `ending_at` datetime DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of exams
 -- ----------------------------
+INSERT INTO `exams` VALUES ('1', null, 'test', 't', 't', '20', '2016-04-15 10:00:00', '5', null, null, '0000-00-00 00:00:00', '%Wgw$8OP', '2016-04-17 08:42:40', '2016-04-17 08:42:40');
 
 -- ----------------------------
 -- Table structure for `questions`

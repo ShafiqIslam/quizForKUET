@@ -47,11 +47,8 @@ class TeachersController extends AppController {
 
 	public function login() {
 		$logged = $this->Session->read('logged');
-		if(!empty($logged)) {
-			return $this->redirect( Router::url( $this->referer(), true ) );
-		}
 
-		if($this->request->is('post')) {
+		if($this->request->is('post') && empty($logged)) {
 			$options = array(
 				'conditions' => array(
 					'Teacher.email' => $this->request->data['Teacher']['email'],
@@ -67,9 +64,11 @@ class TeachersController extends AppController {
 				$data['name_with_des'] = $teacher['Teacher']['designation'] . " " . $teacher['Teacher']['name'];
 				$this->Session->write('logged', $data);
 				$this->Session->setFlash(__('Authentication successful.'), 'default', array('class' => 'success'));
-				return $this->redirect( Router::url( $this->referer(), true ) );
+				$this->redirect(array('controller'=>'pages', 'action' => 'display', "home"));
 			}
 		}
+
+		$this->redirect(array('controller'=>'pages', 'action' => 'display', "home"));
 	}
 	
 }

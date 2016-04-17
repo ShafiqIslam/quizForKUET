@@ -16,4 +16,10 @@ class StudentsController extends AppController {
  */
 	public $components = array('Paginator', 'Session');
 
+	public function add_students () {
+		if($this->request->is('post')) {
+			AuthComponent::_setTrace($this->request->data);
+		}
+	}
+
 }

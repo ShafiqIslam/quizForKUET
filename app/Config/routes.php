@@ -30,6 +30,9 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	Router::connect('/quiz_page', array('controller' => 'pages', 'action' => 'display', 'quiz_page'));
+	Router::connect('/new_quiz', array('controller' => 'exams', 'action' => 'new_exam'));
+	Router::connect('/add_students', array('controller' => 'students', 'action' => 'add_students'));
+	Router::connect('/add_questions', array('controller' => 'questions', 'action' => 'add_question'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
