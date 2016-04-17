@@ -258,6 +258,19 @@ button:focus{
     -o-background-size: cover;
 }
 
+.welcome_section h1{
+    font-family: 'Tangerine', serif;
+    font-size: 60px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.welcome_section h2{
+    font-family: 'Tangerine', serif;
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
 /* About */
 
 .about {
