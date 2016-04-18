@@ -43,16 +43,21 @@ header .greet{
     font-style: italic;
 }
 
+.main_content {
+    width: 100%;
+    position: fixed;
+    bottom: 50px;
+    //padding: 20px;
+}
+
 
 /*--------Slider CSS------------*/
+
 ul.slides {
     list-style: none;
     padding: 0;
     //margin: 19% 0 0 0;
-    position: fixed;
     width: 41%;
-    right: 0;
-    bottom: 60%;
 }
 
 ul.slides li {
@@ -77,10 +82,11 @@ ul.slides li {
   z-index: 8;
   transition: transform 1.4s cubic-bezier(0.01, 1, 0.91, 1) 0.5s;
 }
- @media all and (//max-width: 760px) {
+ /*@media all and (//max-width: 760px) {
 
 ul.slides li { font-size: 20vw; }
 }
+*/
 
 ul.slides li.active { z-index: 10; }
 
@@ -246,7 +252,6 @@ button:focus{
     font-family: Lucida Calligraphy;
     text-shadow: 4px 4px 4px #C5C3C3;
     color: #fff;
-    margin-top: 50%;
 }
 
 .welcome_section h1{
@@ -396,8 +401,6 @@ button:focus{
     font-weight: bold;
 }
 .welcome_quiz_page{
-    position: fixed;
-    bottom: 18%;
     width: 100%;
 }
 

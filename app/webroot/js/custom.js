@@ -25,12 +25,11 @@ $(document).ready(function() {
         $(".flash_message").fadeOut("slow");
     });
     /* auto resize */
-    function autoResizeDiv()
-        {
-            document.getElementByTag('body').style.height = window.innerHeight +'px';
-        }
-        window.onresize = autoResizeDiv;
-        autoResizeDiv();
+    function autoResizeDiv() {
+        $('body').height(window.innerHeight + 'px');
+    }
+    window.onresize = autoResizeDiv;
+    autoResizeDiv();
 });
 
 $(document).ready(function(){
