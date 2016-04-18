@@ -32,6 +32,9 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
+    private $_gmail = "islamshafiq03@gmail.com";
+    private $_gmail_password = "10213223";
+
     public $components = array(
         'Session', 'RequestHandler','Cookie',
         'Auth' => array(
@@ -73,5 +76,36 @@ class AppController extends Controller {
         }
 
         return $rand_string;
+    }
+
+    public function send_mail($receiver, $name, $subject, $body, $plain_body){
+        App::import('Vendor', 'PHPMailer', array('file' => 'PHPMailer' . DS . 'class.phpmailer.php'));
+        $mail = new PHPMailer;
+
+        $mail->isSMTP();                                    // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';  					// Specify main and backup SMTP servers
+        $mail->Port = '587';
+        $mail->SMTPDebug = 1;                               // debugging: 1 = errors and messages, 2 = messages only
+        $mail->SMTPSecure = 'tls';                          // secure transfer enabled REQUIRED for GMail
+        $mail->SMTPAuth = true;                             // Enable SMTP authentication
+        $mail->Username = $this->_gmail;                    // SMTP username
+        $mail->Password = $this->_gmail_password;           // SMTP password
+        $mail->SetFrom($this->_gmail);
+        $mail->FromName = "Online Quiz KUET";
+
+        $mail->addAddress($receiver, $name);
+
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        $mail->AltBody = $plain_body;
+
+        if(!$mail->send()) {
+            //return false;
+            echo "Mailer Error: " . $mail->ErrorInfo; die();
+        } else {
+            return true;
+            //echo "Message has been sent successfully";
+        }
     }
 }
