@@ -6,7 +6,10 @@
     font-family: Harlow Solid Italic;
     src: url(../fonts/custom/HARLOWSI.TTF);
 }
-
+@font-face {
+    font-family: Lucida Calligraphy;
+    src: url(../fonts/custom/LCALLIG.TTF);
+}
 html,
 body {
     width: 100%;
@@ -45,10 +48,11 @@ header .greet{
 ul.slides {
     list-style: none;
     padding: 0;
-    margin: 10% 0 0 0;
+    //margin: 19% 0 0 0;
     position: fixed;
     width: 41%;
     right: 0;
+    bottom: 60%;
 }
 
 ul.slides li {
@@ -239,17 +243,18 @@ button:focus{
 }
 
 .welcome_section{
-    font-family: 'Tangerine', serif;
+    font-family: Lucida Calligraphy;
     text-shadow: 4px 4px 4px #C5C3C3;
     color: #fff;
+    margin-top: 50%;
 }
 
 .welcome_section h1{
-    font-size: 70px;
+    font-size: 50px;
 }
 
 .welcome_section h2{
-    font-size: 60px;
+    font-size: 45px;
 }
 
 /* About */
@@ -317,10 +322,10 @@ button:focus{
 }
 
 .login_signup{
-    margin-top: 30%;
+    margin-top: 5%;
 }
 .qz_crt_btn{
-    margin-top: 35%;
+    bottom: -25px;
 }
 .welcome_quiz_page h1{
     margin :10% 0 0 1%;
@@ -390,19 +395,14 @@ button:focus{
     font-size: 1.6em;
     font-weight: bold;
 }
+.welcome_quiz_page{
+    position: fixed;
+    bottom: 18%;
+    width: 100%;
+}
 
-.login_signup{
-    margin-top: 30%;
-}
-.qz_crt_btn{
-    margin-top: 35%;
-}
 .welcome_quiz_page h1{
     margin :10% 0 0 1%;
-}
-.user_section  {
-    position: relative;
-    z-index: 1;
 }
 
 .user_section button {
@@ -738,6 +738,13 @@ button:focus{
 
 .checkbox-custom:focus + .checkbox-custom-label{
   outline: 1px solid #ddd; /* focus style */
+}
+
+.set_quiz_section form{
+    max-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+
 }
 /* Footer */
 
