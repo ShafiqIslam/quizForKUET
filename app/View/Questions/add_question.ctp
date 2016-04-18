@@ -51,11 +51,72 @@
                         </div>
                         <div class="form-group">
                             <div class="user_section">
-                                <a href="#" class="pull-left" data-hover="View All Added Question"><span>View All Added Question</span></a>
+                                <a href="#add_question_list" class="pull-left" data-toggle="modal" data-hover="View All Added Question"><span>View All Added Question</span></a>
                             </div>
                             <button type="submit" class="btn btn_user  btn_signup pull-right">ADD</button>
                         </div>
                     </form>
+                    <!--==============Question List Modal===============-->
+                    <div class="modal fade" id="add_question_list" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4>Add Question List</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <div class="col-sm-3">
+                                                    SQuestion Name
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    Option-A
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    Option-B
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    Option-C
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    Option-D
+                                                </div>
+                                                <div class="col-sm-1">
+                                                    Correct Answer
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="col-sm-3">
+                                                    What are the parts of a computer?
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    3 Parts
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    2 Parts
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    4 Parts
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    None of them
+                                                </div>
+                                                <div class="col-sm-1">
+                                                    Option-A
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--modal colse-->
                 </div>
             </div>  
         </div>

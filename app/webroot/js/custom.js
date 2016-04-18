@@ -58,7 +58,7 @@ $('#slideshow').dsSlider({
 
 
 /*---------Exam script set section----*/
-
+/*
 $(function(){
     var items = $('.quiz_exam ul');
     if(items.filter(':visible').length == 0){
@@ -84,3 +84,4 @@ $(function(){
         }
     });
 });
+*/

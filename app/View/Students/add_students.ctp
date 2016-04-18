@@ -28,11 +28,55 @@
                         </div>
                         <div class="form-group">
                             <div class="user_section">
-                                <a href="#" class="pull-left" data-hover="View All Added Student"><span>View All Added Student</span></a>
+                                <a href="#stu_list" class="pull-left" data-toggle="modal" data-hover="View All Added Student"><span>View All Added Student</span></a>
                             </div>
                             <button type="submit" class="btn btn_user  btn_signup pull-right">ADD</button>
                         </div>
                     </form>
+
+                    <!--=========Modal of Students List==============-->
+                    <div class="modal fade" id="stu_list" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4>Students List</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <div class="col-sm-6">
+                                                    Student's Email
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    Student's Roll
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    Student's Mobile No.
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="col-sm-6">
+                                                    students@gmail.com
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    123456
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    01711112233
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--modal colse-->
                 </div>
             </div>  
         </div>
