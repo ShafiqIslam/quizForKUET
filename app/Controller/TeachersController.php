@@ -70,5 +70,9 @@ class TeachersController extends AppController {
 
 		$this->redirect(array('controller'=>'pages', 'action' => 'display', "home"));
 	}
+
+	public function my_quiz(){
+		
+	}
 	
 }

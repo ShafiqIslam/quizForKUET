@@ -7,13 +7,14 @@
                             <div class="welcome_section">
                                 <h1>Say goodbye to old days...</h1>
                                 <h2>And join the IOT</h2>
-                            </div>
-                            <div class="login_signup">
-                                <div class="user_section">
-                                    <a href="#signup" data-toggle="modal" data-hover="SIGNUP"><span>SIGNUP</span></a>
-                                    <a href="#login" data-toggle="modal" data-hover="LOGIN"><span>LOGIN</span></a>
+                                <div class="login_signup">
+                                    <div class="user_section">
+                                        <a href="#signup" data-toggle="modal" data-hover="SIGNUP"><span>SIGNUP</span></a>
+                                        <a href="#login" data-toggle="modal" data-hover="LOGIN"><span>LOGIN</span></a>
+                                    </div>
                                 </div>
                             </div>
+                            
                      <?php } else { ?>
                             <div class="welcome_quiz_page">
                                 <h1><span class="greet">Welcome,</span> <br><sapn class="greet_to"><?php echo $name_with_des;?></sapn></h1>
@@ -27,35 +28,35 @@
                     <ul id="slideshow" class="slides">
                         <li data-duration="5000" class="active">
                             <div class="slide-content">
-                              <h3 class="text-center">Slide Content 1</h3>
-                              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <h3 class="text-center">Slide Content 1</h3>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
                         </li>
                         <li data-duration="3000">
                             <div class="slide-content">
-                              <h3 class="text-center">Slide Content 2</h3>
-                              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <h3 class="text-center">Slide Content 2</h3>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
                         </li>
                         <li data-duration="1000">
                             <div class="slide-content">
-                              <h3 class="text-center">Slide Content 3</h3>
-                              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <h3 class="text-center">Slide Content 3</h3>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
                         </li>
                     </ul>
