@@ -56,3 +56,31 @@ $('#slideshow').dsSlider({
   direction: "right" // or 'left'
 });
 
+
+/*---------Exam script set section----*/
+
+$(function(){
+    var items = $('.quiz_exam ul');
+    if(items.filter(':visible').length == 0){
+        items.first().show();
+        console.log(4);
+        $('#prev').addClass('disabled');
+    } else{
+       $('#prev').removeClass('disabled'); 
+    }
+
+    $('#next').click(function(e){
+        e.preventDefault();
+
+        var active = items.filter(':visible:last');
+        active.hide();
+
+        var next = active.next();
+        if (next.length) {
+             next.show();
+        }
+        if (next.length ==items.last()) {
+            $('#next').addClass('disabled');
+        }
+    });
+});

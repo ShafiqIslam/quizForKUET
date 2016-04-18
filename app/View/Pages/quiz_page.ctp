@@ -8,9 +8,37 @@
                     <h2>Estimate Time : 10 mins.</h2>
                     <hr>
                 </div>
-                <form class="ac-custom ac-radio ac-fill" autocomplete="off">
-                    <h2>Where do you proactively envision multimedia based expertise and cross-media growth strategies?</h2>
+                <form class="ac-custom ac-radio ac-fill quiz_exam" autocomplete="off">
                     <ul>
+                        <h2>This is First Question envision multimedia based expertise and cross-media growth strategies?</h2>
+                        <li><input id="r1" name="r1" type="radio"><label for="r1">Seamlessly visualize quality intellectual capital</label></li>
+                        <li><input id="r2" name="r1" type="radio"><label for="r2">Collaboratively administrate turnkey channels</label></li>
+                        <li><input id="r3" name="r1" type="radio"><label for="r3">Objectively seize scalable metrics</label></li>
+                        <li><input id="r4" name="r1" type="radio"><label for="r4">Energistically scale future-proof core competencies</label></li>
+                    </ul>
+                    <ul>
+                        <h2>This is second Question envision multimedia based expertise and cross-media growth strategies?</h2>
+                        <li><input id="r1" name="r1" type="radio"><label for="r1">Seamlessly visualize quality intellectual capital</label></li>
+                        <li><input id="r2" name="r1" type="radio"><label for="r2">Collaboratively administrate turnkey channels</label></li>
+                        <li><input id="r3" name="r1" type="radio"><label for="r3">Objectively seize scalable metrics</label></li>
+                        <li><input id="r4" name="r1" type="radio"><label for="r4">Energistically scale future-proof core competencies</label></li>
+                    </ul>
+                    <ul>
+                        <h2>This is third Question envision multimedia based expertise and cross-media growth strategies?</h2>
+                        <li><input id="r1" name="r1" type="radio"><label for="r1">Seamlessly visualize quality intellectual capital</label></li>
+                        <li><input id="r2" name="r1" type="radio"><label for="r2">Collaboratively administrate turnkey channels</label></li>
+                        <li><input id="r3" name="r1" type="radio"><label for="r3">Objectively seize scalable metrics</label></li>
+                        <li><input id="r4" name="r1" type="radio"><label for="r4">Energistically scale future-proof core competencies</label></li>
+                    </ul>
+                    <ul>
+                        <h2>Where do you proactively envision multimedia based expertise and cross-media growth strategies?</h2>
+                        <li><input id="r1" name="r1" type="radio"><label for="r1">Seamlessly visualize quality intellectual capital</label></li>
+                        <li><input id="r2" name="r1" type="radio"><label for="r2">Collaboratively administrate turnkey channels</label></li>
+                        <li><input id="r3" name="r1" type="radio"><label for="r3">Objectively seize scalable metrics</label></li>
+                        <li><input id="r4" name="r1" type="radio"><label for="r4">Energistically scale future-proof core competencies</label></li>
+                    </ul>
+                    <ul>
+                        <h2>Where do you proactively envision multimedia based expertise and cross-media growth strategies?</h2>
                         <li><input id="r1" name="r1" type="radio"><label for="r1">Seamlessly visualize quality intellectual capital</label></li>
                         <li><input id="r2" name="r1" type="radio"><label for="r2">Collaboratively administrate turnkey channels</label></li>
                         <li><input id="r3" name="r1" type="radio"><label for="r3">Objectively seize scalable metrics</label></li>
@@ -26,8 +54,8 @@
                     </div>
                     <div class="col-sm-4 col-sm-offset-2">
                         <span class="pull-right">
-                            <button type="button" class="btn btn_user">PREVIOUS</button>  
-                            <button type="button" class="btn btn_user">NEXT</button>
+                            <button type="button" id="prev" class="btn btn_user">PREVIOUS</button>  
+                            <button type="button" id="next" class="btn btn_user">NEXT</button>
                         </span>
                     </div>
                 </div>

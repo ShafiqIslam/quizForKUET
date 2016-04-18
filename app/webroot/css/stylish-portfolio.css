@@ -784,6 +784,9 @@ button:focus{
     margin-left: -3.5%;
 }
 
+.quiz_exam ul{
+    display: none;
+}
 
 
 /*-----------Flash Message--------*/
