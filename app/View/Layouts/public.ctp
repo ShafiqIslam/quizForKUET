@@ -63,6 +63,7 @@
     </nav>
     <?php } ?>
 
+
     <?php $flash = $this->Session->flash('flash'); ?>
     <?php if(!empty($flash)) { ?>
         <div class="container flash_message">
@@ -74,32 +75,7 @@
 
     <!--Calling the content of the body  -->
     <?php echo $this->fetch('content'); ?>
-
     <!-- Footer -->
-    <footer>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                	<div class="pull-right">
-	                	<ul class="list-inline social_logo">
-	                        <li>
-	                            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-	                        </li>
-	                        <li>
-	                            <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-	                        </li>
-	                        <li>
-	                            <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
-	                        </li>
-	                    </ul>
-                	</div>
-                	<div class="pull-left">
-                		<p class="">Copyright &copy; Online Quiz Test-2016</p>
-                	</div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <?php echo $this->Html->script(array('bootstrapValidator.min', 'validator.min', 'custom')); ?>
 </body>
