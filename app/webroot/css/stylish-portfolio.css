@@ -820,3 +820,8 @@ button:focus{
 .error {
     background: red;
 }
+
+.disabled_link {
+    pointer-events: none;
+    cursor: default;
+}

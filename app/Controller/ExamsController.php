@@ -17,13 +17,51 @@ class ExamsController extends AppController {
 	public $components = array('Paginator', 'Session');
 
 	public function new_exam() {
+		$logged = $this->Session->read('logged');
+		if(empty($logged)) {
+			return $this->redirect(array('controller'=>'pages', 'action' => 'display', 'home'));
+		}
+
 		if($this->request->is('post')) {
-			$this->request->data['Exam']['ending_at'] = 0;
+			$this->request->data['Exam']['teacher_id'] = $logged['id'];
+			$time = new DateTime($this->request->data['Exam']['starting_at']);
+			$time->add(new DateInterval('PT' . $this->request->data['Exam']['time'] . 'M'));
+			$this->request->data['Exam']['ending_at'] = $time->format('Y-m-d H:i:s');
 			$this->request->data['Exam']['password'] = $this->random_string(8, 1, 1, 1);
 			$this->Exam->save($this->request->data);
 			$this->Session->setFlash(__('Exam Created. Now add some question to it.'), 'default', array('class' => 'success'));
 			return $this->redirect(array('controller'=>'questions', 'action' => 'add_question', $this->Exam->id));
 		}
+	}
+
+	public function update_exam($id) {
+		$this->Exam->id = $id;
+		if (!$this->Exam->exists($id)) {
+			throw new NotFoundException(__('Invalid quiz'));
+		}
+
+		if($this->request->is('post')) {
+			$this->Exam->save($this->request->data);
+			$this->Session->setFlash(__('Exam Updated.'), 'default', array('class' => 'success'));
+			return $this->redirect(array('controller'=>'exams', 'action' => 'update_exam', $id));
+		} else {
+			$options = array('conditions' => array('Exam.' . $this->Exam->primaryKey => $id));
+			$this->request->data = $this->Exam->find('first', $options);
+		}
+	}
+
+	public function delete_exam($id) {
+		$this->Exam->id = $id;
+		if (!$this->Exam->exists($id)) {
+			throw new NotFoundException(__('Invalid quiz'));
+		}
+		$this->request->allowMethod('post', 'delete');
+		if ($this->Exam->delete()) {
+			$this->Session->setFlash(__('Exam Deleted.'), 'default', array('class' => 'success'));
+		} else {
+			$this->Session->setFlash(__('Exam can\'t be deleted right now.'), 'default', array('class' => 'error'));
+		}
+		return $this->redirect(array('controller'=>'teachers', 'action' => 'my_quiz'));
 	}
 
 	public function exam_all_data($exam_id = null) {
