@@ -43,24 +43,24 @@
 
     <!-- Navigation -->
     <?php if(!empty($is_logged)) { ?>
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="<?php echo $this->webroot;?>exams/new">Menu</a>
-            </li>
-            <li>
-                <a href="<?php echo $this->webroot;?>exams/new">Create new quiz</a>
-            </li>
-            <li>
-                <a href="<?php echo $this->webroot;?>emams/my_exams">My quizzes</a>
-            </li>
-            <li>
-                <a href="<?php echo $this->webroot;?>teachers/logout">Logout</a>
-            </li>
-        </ul>
-    </nav>
+        <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+                <li class="sidebar-brand">
+                    <a href="<?php echo $this->webroot;?>exams/new">Menu</a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->webroot;?>exams/new">Create new quiz</a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->webroot;?>emams/my_exams">My quizzes</a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->webroot;?>teachers/logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
     <?php } ?>
 
 
