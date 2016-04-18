@@ -17,11 +17,12 @@ class StudentsController extends AppController {
  */
 	public $components = array('Paginator', 'Session');
 
-	public function add_students () {
-		if($this->request->is('post')) {
-			$exam = new ExamsController();
+	public function add_students ($exam_id) {
+		$exam = new ExamsController();
+		$exam_details = $exam->exam_all_data($this->request->data['Student']['exam_id']);
+		$this->set(compact('exam_details'));
 
-			$exam_details = $exam->exam_all_data($this->request->data['Student']['exam_id']);
+		if($this->request->is('post')) {
 			AuthComponent::_setTrace($this->request->data);
 
 			$mail = $this->request->data['Student']['email'];

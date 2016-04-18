@@ -9,52 +9,52 @@
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Quiz Name:</label>
                             <div class="col-sm-9">
-                                <input type="text" name="data[Exam][name]" class="form-control" id="q_name" placeholder="Quiz Name">
+                                <input type="text" name="data[Exam][name]" value="<?php echo $this->request->data['Exam']['name'];?>" class="form-control" id="q_name" placeholder="Quiz Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Subject:</label>
                             <div class="col-sm-9">
-                                <input type="text" name="data[Exam][subject]" class="form-control" id="s_name" placeholder="Subject">
+                                <input type="text" name="data[Exam][subject]" value="<?php echo $this->request->data['Exam']['subject'];?>" class="form-control" id="s_name" placeholder="Subject">
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Subject Code:</label>
                             <div class="col-sm-9">
-                                <input type="text" name="data[Exam][subject_code]" class="form-control" id="s_code" placeholder="Subject Code">
+                                <input type="text" name="data[Exam][subject_code]" value="<?php echo $this->request->data['Exam']['subject_code'];?>" class="form-control" id="s_code" placeholder="Subject Code">
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Starting At:</label>
                             <div class="col-sm-9">
-                                <input type="datetime-local" name="data[Exam][starting_at]" class="form-control" id="starting_at" placeholder="Begins In">
+                                <input type="datetime-local" name="data[Exam][starting_at]" value="<?php echo $this->request->data['Exam']['starting_at'];?>" class="form-control" id="starting_at" placeholder="Begins In">
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Total time:</label>
                             <div class="col-sm-9">
-                                <input type="number" name="data[Exam][time]" class="form-control" id="time" placeholder="Minutes">
+                                <input type="number" name="data[Exam][time]" value="<?php echo $this->request->data['Exam']['time'];?>" class="form-control" id="time" placeholder="Minutes">
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Marks Per Question:</label>
                             <div class="col-sm-9">
-                                <input type="number" name="data[Exam][marks_per_ques]" class="form-control" id="marks_per_ques" placeholder="Marks Per Question">
+                                <input type="number" name="data[Exam][marks_per_ques]" value="<?php echo $this->request->data['Exam']['marks_per_ques'];?>" class="form-control" id="marks_per_ques" placeholder="Marks Per Question">
                             </div>
 
                         </div>
                         <div class="form-group custom_checkbox">
                             <div class="col-sm-9 col-sm-offset-3">
-                                <input type="checkbox" name="data[Exam][negate]" value="1" id="cb2" class="pull-left checkbox-custom"><label for="cb2" class="control-label checkbox-custom-label">Negative Marking</label>
+                                <input type="checkbox" name="data[Exam][negate]" <?php echo ($this->request->data['Exam']['negate']) ? "checked" : "";?>" id="cb2" class="pull-left checkbox-custom"><label for="cb2" class="control-label checkbox-custom-label">Negative Marking</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="user_section">
-                                <button type="submit" data-hover="CREATE" class="pull-right"><span>SUBMIT</span></button>
+                                <button type="submit" data-hover="UPDATE" class="pull-right"><span>SUBMIT</span></button>
                             </div>
                         </div>
                     </form>

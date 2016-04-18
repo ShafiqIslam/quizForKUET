@@ -14,7 +14,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
                      <?php } else { ?>
                             <div class="welcome_quiz_page">
                                 <h1><span class="greet">Welcome,</span> <br><sapn class="greet_to"><?php echo $name_with_des;?></sapn></h1>

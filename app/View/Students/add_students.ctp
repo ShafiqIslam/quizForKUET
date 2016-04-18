@@ -1,9 +1,7 @@
-
-
 <div class="new_exam_bg">
     <div class="container-fluid">
         <div class="row">
-            <h1>Create A Question</h1>
+            <h1>Quiz Management Panel</h1>
             <div id="quiz_create_tab">
                 <?php echo $this->element('quiz_tab'); ?>
                 <div class="set_quiz_section col-sm-12">
