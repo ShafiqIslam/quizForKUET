@@ -26,4 +26,50 @@ class ExamsController extends AppController {
 		}
 	}
 
+	public function exam_all_data($exam_id = null) {
+		if (!$this->Exam->exists($exam_id)) {
+			throw new NotFoundException(__('Invalid quiz'));
+		}
+
+		$this->Exam->recursive = 1;
+		$data = $this->Exam->find('first', array(
+				'conditions' => array(
+					'Exam.id' => $exam_id,
+				),
+			)
+		);
+		AuthComponent::_setTrace($data);
+		return $data;
+	}
+
+	public function start_quiz ($exam_id) {
+		$exam_details = $this->exam_all_data($exam_id);
+		$this->set(compact('exam_details'));
+	}
+
+	public function authenticate_student($exam_id) {
+		$this->autoRender = false;
+		$this->autoLayout = false;
+		header('Content-Type: application/json');
+
+		if($this->request->is('post')) {
+			$from = $this->request->data['roll'];
+			$from_name = $this->request->data['pass'];
+			if (!$this->Exam->exists($exam_id)) {
+				die(json_encode(array('success' => false, 'msg' => 'Invalid Quiz')));
+			}
+
+			$this->Exam->recursive = 1;
+			$data = $this->Exam->find('all', array(
+					'conditions' => array(
+						'Exam.id' => $exam_id,
+					),
+				)
+			);
+			if(1) {
+				die(json_encode(array('success' => true, 'msg' => 'Your message has been sent successfully. We\'ll get to it soon.')));
+			} else die(json_encode(array('success' => false, 'msg' => 'Something bad happened!!! Please, try again.' )));
+		} else die(json_encode(array('success' => false, 'msg' => 'Invalid Request')));
+	}
+
 }
