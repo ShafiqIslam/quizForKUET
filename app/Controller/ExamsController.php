@@ -53,8 +53,8 @@ class ExamsController extends AppController {
 		header('Content-Type: application/json');
 
 		if($this->request->is('post')) {
-			$from = $this->request->data['roll'];
-			$from_name = $this->request->data['pass'];
+			$roll = $this->request->data['roll'];
+			$pass = $this->request->data['pass'];
 			if (!$this->Exam->exists($exam_id)) {
 				die(json_encode(array('success' => false, 'msg' => 'Invalid Quiz')));
 			}
@@ -63,12 +63,14 @@ class ExamsController extends AppController {
 			$data = $this->Exam->find('all', array(
 					'conditions' => array(
 						'Exam.id' => $exam_id,
+						'Student.roll' => $roll,
+						'Exam.password' => AuthComponent::password($pass)
 					),
 				)
 			);
-			if(1) {
-				die(json_encode(array('success' => true, 'msg' => 'Your message has been sent successfully. We\'ll get to it soon.')));
-			} else die(json_encode(array('success' => false, 'msg' => 'Something bad happened!!! Please, try again.' )));
+			if(!empty($data)) {
+				die(json_encode(array('success' => true, 'msg' => 'Authentication Successful. You can start now. Good luck.')));
+			} else die(json_encode(array('success' => false, 'msg' => 'Authentication Error!!! Please, try again.' )));
 		} else die(json_encode(array('success' => false, 'msg' => 'Invalid Request')));
 	}
 

@@ -60,11 +60,10 @@
                             <div class="col-sm-9 col-sm-offset-3">
                                 <input type="checkbox" name="data[Exam][neagte]" id="cb2" class="pull-left checkbox-custom"><label for="cb2" class="control-label checkbox-custom-label">Negative Marking</label>
                             </div>
-
                         </div>
                         <div class="form-group">
                             <div class="user_section">
-                                    <button type="submit" data-hover="SUBMIT" class="pull-right"><span>SIGNUP</span></button>
+                                <button type="submit" data-hover="CREATE" class="pull-right"><span>SUBMIT</span></button>
                             </div>
                         </div>
                     </form>
