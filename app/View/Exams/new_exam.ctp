@@ -3,16 +3,7 @@
         <div class="row">
             <h1>Create A Question</h1>
             <div id="quiz_create_tab">
-                <div class="tab_section col-sm-12">
-                    <div class="col-sm-10">
-                        <ul class="nav nav-justified nav-tabs" role="tablist">
-                            <li class="active"><a href="<?php echo $this->webroot;?>new_quiz">Ceate Question</a></li>
-                            <li><a href="<?php echo $this->webroot;?>questions/add_question">Add Question</a></li>
-                            <li><a href="#">Add Student</a></li>
-                            <li><a href="#">Result</a></li>        
-                          </ul>
-                    </div>
-                </div>
+                <?php echo $this->element('quiz_tab'); ?>
                 <div class="set_quiz_section col-sm-12">
                     <form class="form-horizontal col-sm-10 quiz_form" method="post" action="<?php echo $this->webroot;?>exams/new_exam" role="form" id="create_quiz_form">
                         <div class="form-group">
