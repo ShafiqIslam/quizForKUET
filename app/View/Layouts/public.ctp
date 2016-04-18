@@ -54,7 +54,7 @@
                 <a href="<?php echo $this->webroot;?>exams/new">Create new quiz</a>
             </li>
             <li>
-                <a href="<?php echo $this->webroot;?>emams/my_exams">My quizzes</a>
+                <a href="<?php echo $this->webroot;?>teachers/my_quiz">My quizes</a>
             </li>
             <li>
                 <a href="<?php echo $this->webroot;?>teachers/logout">Logout</a>
