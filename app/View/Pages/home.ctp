@@ -19,7 +19,7 @@
                             <div class="welcome_quiz_page">
                                 <h1><span class="greet">Welcome,</span> <br><sapn class="greet_to"><?php echo $name_with_des;?></sapn></h1>
                                 <div class="user_section qz_crt_btn">
-                                    <a data-hover="CREATE A QUIZ NOW" href="<?php echo $this->webroot;?>new_quiz"><span>CREATE A QUIZ NOW</span></a>
+                                    <a data-hover="CREATE A QUIZ NOW" href="<?php echo $this->webroot;?>exams/new_exam"><span>CREATE A QUIZ NOW</span></a>
                                 </div>
                             </div>
                      <?php } ?>
