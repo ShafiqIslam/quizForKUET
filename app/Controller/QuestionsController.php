@@ -23,6 +23,10 @@ class QuestionsController extends AppController {
 			$this->Session->setFlash(__('Question Added.'), 'default', array('class' => 'success'));
 			return $this->redirect(array('controller'=>'questions', 'action' => 'add_question', $id));
 		}
+
+		$exam = new ExamsController();
+		$exam_details = $exam->exam_all_data($this->request->data['Student']['exam_id']);
+		$this->set(compact('exam_details'));
 	}
 
 	public function edit_question ($id) {
@@ -35,5 +39,9 @@ class QuestionsController extends AppController {
 			$options = array('conditions' => array('Question.' . $this->Question->primaryKey => $id));
 			$this->request->data = $this->Question->find('first', $options);
 		}
+
+		$exam = new ExamsController();
+		$exam_details = $exam->exam_all_data($this->request->data['Student']['exam_id']);
+		$this->set(compact('exam_details'));
 	}
 }
