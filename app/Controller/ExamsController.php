@@ -76,7 +76,7 @@ class ExamsController extends AppController {
 				),
 			)
 		);
-		AuthComponent::_setTrace($data);
+		#AuthComponent::_setTrace($data);
 		return $data;
 	}
 

@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('ExamsController', 'Controller');
 /**
  * Questions Controller
  *
@@ -25,11 +26,15 @@ class QuestionsController extends AppController {
 		}
 
 		$exam = new ExamsController();
-		$exam_details = $exam->exam_all_data($this->request->data['Student']['exam_id']);
+		$exam_details = $exam->exam_all_data($id);
 		$this->set(compact('exam_details'));
 	}
 
 	public function edit_question ($id) {
+		if (!$this->Question->exists($id)) {
+			throw new NotFoundException(__('Invalid Question'));
+		}
+
 		if($this->request->is('post')) {
 			$this->Question->id = $id;
 			$this->Question->save($this->request->data);
@@ -41,7 +46,7 @@ class QuestionsController extends AppController {
 		}
 
 		$exam = new ExamsController();
-		$exam_details = $exam->exam_all_data($this->request->data['Student']['exam_id']);
+		$exam_details = $exam->exam_all_data($this->request->data['Question']['exam_id']);
 		$this->set(compact('exam_details'));
 	}
 }

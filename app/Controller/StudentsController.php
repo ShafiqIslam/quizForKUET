@@ -19,7 +19,7 @@ class StudentsController extends AppController {
 
 	public function add_students ($exam_id) {
 		$exam = new ExamsController();
-		$exam_details = $exam->exam_all_data($this->request->data['Student']['exam_id']);
+		$exam_details = $exam->exam_all_data($exam_id);
 		$this->set(compact('exam_details'));
 
 		if($this->request->is('post')) {
@@ -31,6 +31,26 @@ class StudentsController extends AppController {
 				$this->Student->save($this->request->data);
 			}
 		}
+	}
+
+	public function edit_student ($id) {
+		if (!$this->Student->exists($id)) {
+			throw new NotFoundException(__('Invalid Student'));
+		}
+
+		if($this->request->is('post')) {
+			$this->Question->id = $id;
+			$this->Question->save($this->request->data);
+			$this->Session->setFlash(__('Question Updated.'), 'default', array('class' => 'success'));
+			return $this->redirect(array('controller'=>'questions', 'action' => 'edit_question', $id));
+		} else {
+			$options = array('conditions' => array('Question.' . $this->Question->primaryKey => $id));
+			$this->request->data = $this->Question->find('first', $options);
+		}
+
+		$exam = new ExamsController();
+		$exam_details = $exam->exam_all_data($this->request->data['Student']['exam_id']);
+		$this->set(compact('exam_details'));
 	}
 
 	private function _send_mail_to_student($mail, $roll, $exam_details) {
