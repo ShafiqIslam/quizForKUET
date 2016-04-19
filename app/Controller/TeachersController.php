@@ -72,7 +72,20 @@ class TeachersController extends AppController {
 	}
 
 	public function my_quiz(){
-		
+		$logged = $this->Session->read('logged');
+
+		if(!empty($logged)) {
+			$options = array(
+				'conditions' => array(
+					'Teacher.id' => $logged['id'],
+				)
+			);
+			$this->Teacher->recursive = 1;
+			$teacher = $this->Teacher->find('first', $options);
+			$this->set(compact('teacher'));
+		} else {
+			$this->redirect(array('controller'=>'pages', 'action' => 'display', "home"));
+		}
 	}
 	
 }

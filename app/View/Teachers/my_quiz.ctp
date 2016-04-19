@@ -7,73 +7,18 @@
 				<div class="col-sm-10">
 					<div class="my_quiz_section quiz_form">
 						<ul class="my_quiz_list">
+							<?php foreach($teacher['Exam'] as $key => $item) { ?>
 							<li>
-								<a href="<?php echo $this->webroot;?>exams/new_exam">
-									<div class="col-sm-6"><b>Quiz Name</b></div>
-									<div class="col-sm-3"><b>Subject of the quiz</b></div>
-									<div class="col-sm-3"><b>Date Time</b></div>
+								<a href="<?php echo $this->webroot;?>exams/update_exam/<?php echo $item['id'];?>">
+									<div class="col-sm-6"><b><?php echo $item['name'];?></b></div>
+									<div class="col-sm-3"><b><?php echo $item['subject'];?></b></div>
+									<div class="col-sm-3"><b><?php echo $item['starting_at'];?></b></div>
 								</a>
 							</li>
-							<li>
-								<a href="<?php echo $this->webroot;?>exams/new_exam">
-									<div class="col-sm-6">Quiz Name</div>
-									<div class="col-sm-3">Subject of the quiz</div>
-									<div class="col-sm-3">Date Time</div>
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo $this->webroot;?>exams/new_exam">
-									<div class="col-sm-6">Quiz Name</div>
-									<div class="col-sm-3">Subject of the quiz</div>
-									<div class="col-sm-3">Date Time</div>
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo $this->webroot;?>exams/new_exam">
-									<div class="col-sm-6">Quiz Name</div>
-									<div class="col-sm-3">Subject of the quiz</div>
-									<div class="col-sm-3">Date Time</div>
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo $this->webroot;?>exams/new_exam">
-									<div class="col-sm-6">Quiz Name</div>
-									<div class="col-sm-3">Subject of the quiz</div>
-									<div class="col-sm-3">Date Time</div>
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo $this->webroot;?>exams/new_exam">
-									<div class="col-sm-6">Quiz Name</div>
-									<div class="col-sm-3">Subject of the quiz</div>
-									<div class="col-sm-3">Date Time</div>
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo $this->webroot;?>exams/new_exam">
-									<div class="col-sm-6">Quiz Name</div>
-									<div class="col-sm-3">Subject of the quiz</div>
-									<div class="col-sm-3">Date Time</div>
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo $this->webroot;?>exams/new_exam">
-									<div class="col-sm-6">Quiz Name</div>
-									<div class="col-sm-3">Subject of the quiz</div>
-									<div class="col-sm-3">Date Time</div>
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo $this->webroot;?>exams/new_exam">
-									<div class="col-sm-6">Quiz Name</div>
-									<div class="col-sm-3">Subject of the quiz</div>
-									<div class="col-sm-3">Date Time</div>
-								</a>
-							</li>
+							<?php } ?>
 						</ul>
 					</div>
 				</div>
-				
 			</div>
             </div>
         </div>
