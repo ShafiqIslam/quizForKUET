@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group">
                             <div class="user_section">
-                                <a href="#stu_list" class="pull-left" data-toggle="modal" data-hover="View All Added Student"><span>View All Added Student</span></a>
+                                <a href="#stu_list" class="pull-left" data-toggle="modal" data-hover="View All Added Student" id="open_modal"><span>View All Added Student</span></a>
                             </div>
                             <button type="submit" class="btn btn_user  btn_signup pull-right">ADD</button>
                         </div>
@@ -47,53 +47,21 @@
                                 <div class="modal-body custom_body">
 
                                     <table class="table table-responsive table-hover">
-                                            <th>Student's Email</th>
-                                            <th>Student's Roll</th>
-                                            <th>Student's Mobile</th>
-                                            <th>Option</th>
-                                            <tr>  
-                                                <td> <a href="#">students@gmail.com</a></td>
-                                                <td><a href="">123456</a></td>
-                                                <td><a href="">01711112233</a></td>
-                                                <td><button class="btn btn-warning">DELETE</button></td>   
-                                            </tr>
-                                            <tr>  
-                                                <td> <a href="#">students@gmail.com</a></td>
-                                                <td><a href="">123456</a></td>
-                                                <td><a href="">01711112233</a></td>
-                                                <td><button class="btn btn-warning">DELETE</button></td>   
-                                            </tr>
-                                            <tr>  
-                                                <td> <a href="#">students@gmail.com</a></td>
-                                                <td><a href="">123456</a></td>
-                                                <td><a href="">01711112233</a></td>
-                                                <td><button class="btn btn-warning">DELETE</button></td>   
-                                            </tr>
-                                            <tr>  
-                                                <td> <a href="#">students@gmail.com</a></td>
-                                                <td><a href="">123456</a></td>
-                                                <td><a href="">01711112233</a></td>
-                                                <td><button class="btn btn-warning">DELETE</button></td>   
-                                            </tr>
-                                            <tr>  
-                                                <td> <a href="#">students@gmail.com</a></td>
-                                                <td><a href="">123456</a></td>
-                                                <td><a href="">01711112233</a></td>
-                                                <td><button class="btn btn-warning">DELETE</button></td>   
-                                            </tr>
-                                            <tr>  
-                                                <td> <a href="#">students@gmail.com</a></td>
-                                                <td><a href="">123456</a></td>
-                                                <td><a href="">01711112233</a></td>
-                                                <td><button class="btn btn-warning">DELETE</button></td>   
-                                            </tr>
-                                            <tr>  
-                                                <td> <a href="#">students@gmail.com</a></td>
-                                                <td><a href="">123456</a></td>
-                                                <td><a href="">01711112233</a></td>
-                                                <td><button class="btn btn-warning">DELETE</button></td>   
-                                            </tr>
-                                        </table>
+                                        <th>Student's Email</th>
+                                        <th>Student's Roll</th>
+                                        <th>Student's Mobile</th>
+                                        <th>Option</th>
+                                        <?php foreach($exam_details['Student'] as $key => $item) {?>
+                                        <tr>
+                                            <td> <?php echo $item['email'];?></td>
+                                            <td><?php echo $item['roll'];?></td>
+                                            <td><?php echo $item['mobile'];?></td>
+                                            <td>
+                                                <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_student', $item['id']), array( 'class' => 'btn btn-warning'), __('Are you sure you want to delete # %s?', $item['roll'])); ?>
+                                            </td>
+                                        </tr>
+                                        <?php } ?>
+                                    </table>
                                 </div>
                             </div>
                         </div>
