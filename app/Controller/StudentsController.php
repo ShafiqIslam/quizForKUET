@@ -20,16 +20,39 @@ class StudentsController extends AppController {
 	public function add_students ($exam_id) {
 		$exam = new ExamsController();
 		$exam_details = $exam->exam_all_data($exam_id);
+		#AuthComponent::_setTrace($exam_details);
 		$this->set(compact('exam_details'));
 
 		if($this->request->is('post')) {
-			AuthComponent::_setTrace($this->request->data);
-
+			$this->request->data['Student']['exam_id'] = $exam_id;
 			$mail = $this->request->data['Student']['email'];
 			$roll = $this->request->data['Student']['roll'];
-			if($this->_send_mail_to_student($mail, $roll, $exam_details)) {
-				$this->Student->save($this->request->data);
+			$mobile = str_replace('-', '', str_replace('+880 ', '0', $this->request->data['Student']['mobile']));
+			$this->request->data['Student']['mobile'] = $mobile;
+
+			$this->_send_mail_to_student($mail, $roll, $exam_details);
+
+			$quiz_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "exams/start_quiz/" . $exam_details['Exam']['id'];
+			$text = "";
+			$text .= "Join the quiz on " . $exam_details['Exam']['subject'] . '. By: ' . $exam_details['Teacher']['name'] . 'Time: ' . date_format(date_create($exam_details['Exam']['starting_at']),'d M, H:i');
+			//$text .= $quiz_link;
+			//$text .= ' . Password: ' .  $exam_details['Exam']['password'] . '.';
+			//$sms_sent = $this->send_sms($mobile, $text);
+			$notify_error = 0;
+			/*if(empty($sms_sent['success'])) {
+				$notify_error = 1;
+			}*/
+
+			if($this->Student->save($this->request->data)) {
+				if(!$notify_error) {
+					$this->Session->setFlash(__('Student Added and notified.'), 'default', array('class' => 'success'));
+				} else {
+					$this->Session->setFlash(__('Student Added but could not be notified.'), 'default', array('class' => 'error'));
+				}
+			} else {
+				$this->Session->setFlash(__('Student could not be added.'), 'default', array('class' => 'error'));
 			}
+			return $this->redirect(array('controller'=>'students', 'action' => 'add_students', $exam_id));
 		}
 	}
 
@@ -54,7 +77,7 @@ class StudentsController extends AppController {
 	}
 
 	private function _send_mail_to_student($mail, $roll, $exam_details) {
-		$login_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "admin";
+		$login_link = "http://" . $_SERVER['HTTP_HOST'] . $this->webroot . "exams/start_quiz/" . $exam_details['Exam']['id'];
 		$subject = "Invitation for Online Quiz";
 		$body = "";
 
@@ -64,8 +87,8 @@ class StudentsController extends AppController {
 		$body .= '          <div style="padding: 20px;">';
 		$body .= '              <strong style="font-size: 20px;">Hello, ' . $roll . ' </strong>';
 		$body .= '              <br><br>';
-		$body .= '';
-		$body .= '              <p style="font-size: 15px;">Your password is: <strong>' .  $exam_details . '</strong> .</p>';
+		$body .= '				You have been invited to join the quiz on ' . $exam_details['Exam']['subject'] . '. By: ' . $exam_details['Teacher']['name'] . 'The quiz will start at ' . date_format(date_create($exam_details['Exam']['starting_at']),'d M, H:i');
+		$body .= '              <p style="font-size: 15px;">Use this password for authentication: <strong>' .  $exam_details['Exam']['password'] . '</strong> .</p>';
 		$body .= '              <a style="font-size: 15px;" href="' . $login_link . '">Follow This Link</a>';
 		$body .= '              <br><br>';
 		$body .= '              <p style="font-size: 15px;">If you don\'t know anything about this email. Please just ignore it.';
@@ -80,8 +103,10 @@ class StudentsController extends AppController {
 		$body .= '  </body>';
 		$body .= '</html>';
 
-		$plain_body = "Your password is: $exam_details. ";
-		$plain_body .= "<a target=\"_blank\" href=\"$login_link\">Login now</a>";
+		$plain_body = "";
+		$plain_body .= 'You have been invited to join the quiz on ' . $exam_details['Exam']['subject'] . '. By: ' . $exam_details['Teacher']['name'] . 'The quiz will start at ' . date_format(date_create($exam_details['Exam']['starting_at']),'d M, H:i');
+		$plain_body .= 'Use this password for authentication: ' .  $exam_details['Exam']['password'] . '.';
+		$plain_body .= '<a href="' . $login_link . '">Follow This Link</a>';
 
 		if($this->send_mail($mail, $roll, $subject, $body, $plain_body)) {
 			return true;

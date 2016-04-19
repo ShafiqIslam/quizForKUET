@@ -85,6 +85,11 @@ class ExamsController extends AppController {
 		$this->set(compact('exam_details'));
 	}
 
+	public function results($id){
+		$exam_details = $this->exam_all_data($id);
+		$this->set(compact('exam_details'));
+	}
+
 	public function authenticate_student($exam_id) {
 		$this->autoRender = false;
 		$this->autoLayout = false;
