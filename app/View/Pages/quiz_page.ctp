@@ -54,8 +54,8 @@
                     </div>
                     <div class="col-sm-4 col-sm-offset-2">
                         <span class="pull-right">
-                            <button type="button" id="prev" class="btn btn_user">PREVIOUS</button>  
-                            <button type="button" id="next" class="btn btn_user">NEXT</button>
+                            <button type="button" id="prev" class="btn btn-2 btn-2a btn_user">PREVIOUS</button>
+                            <button type="button" id="next" class="btn btn-2 btn-2a btn_user">NEXT</button> 
                         </span>
                     </div>
                 </div>

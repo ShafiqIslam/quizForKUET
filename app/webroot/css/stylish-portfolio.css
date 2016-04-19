@@ -386,73 +386,13 @@ button:focus{
     transform: translateX(0%);
 }
 
-
-.user_section button{
-    position: relative;
-    display: inline-block;
-    margin: 15px 25px;
-    outline: none;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 0 0 1px rgba(255,255,255,0.3);
-    font-size: 1.6em;
-    font-weight: bold;
-}
 .welcome_quiz_page{
     width: 100%;
 }
 
 .welcome_quiz_page h1{
     //margin :10% 0 0 1%;
-}
-
-.user_section button {
-    overflow: hidden;
-    margin: 0 15px;
-}
-
-.user_section button span {
-    display: block;
-    padding: 15px 30px;
-    background: #368918;
-    -webkit-transition: -webkit-transform 0.3s;
-    -moz-transition: -moz-transform 0.3s;
-    transition: transform 0.3s;
-}
-
-.user_section button::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    padding: 15px 30px;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    text-align: center;
-    color: #368918;
-    content: attr(data-hover);
-    -webkit-transition: -webkit-transform 0.3s;
-    -moz-transition: -moz-transform 0.3s;
-    transition: transform 0.3s;
-    -webkit-transform: translateX(-25%);
-}
-
-.user_section button:hover span,
-.user_section button:focus span {
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    transform: translateX(100%);
-}
-
-.user_section button:hover::before,
-.user_section button:focus::before {
-    -webkit-transform: translateX(0%);
-    -moz-transform: translateX(0%);
-    transform: translateX(0%);
-}
+}  
 
 .new_exam_bg{
     display: table;
@@ -866,3 +806,63 @@ table td a{
 .modal .custom_header{
     border-bottom: 0;
 }
+
+
+
+
+/* General button style (reset) */
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+
+/* Button 2 */
+.btn-2 {
+    background: #cb4e4e;
+    color: #fff;
+    box-shadow: 0 6px #ab3c3c;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+/* Button 2a */
+.btn-2a {
+    border-radius: 0 0 5px 5px;
+}
+
+.btn-2a:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+}
+
+.btn-2a:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+

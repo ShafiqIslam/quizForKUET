@@ -49,12 +49,12 @@
                         </div>
                         <div class="form-group custom_checkbox">
                             <div class="col-sm-9 col-sm-offset-3">
-                                <input type="checkbox" name="data[Exam][negate]" <?php echo ($this->request->data['Exam']['negate']) ? "checked" : "";?>" id="cb2" class="pull-left checkbox-custom"><label for="cb2" class="control-label checkbox-custom-label">Negative Marking</label>
+                                <input type="checkbox" name="data[Exam][negate]" <?php echo ($this->request->data['Exam']['negate']) ? "checked" : "";?> id="cb2" class="pull-left checkbox-custom"><label for="cb2" class="control-label checkbox-custom-label">Negative Marking</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="user_section">
-                                <button type="submit" data-hover="UPDATE" class="pull-right"><span>SUBMIT</span></button>
+                                <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">SUBMIT</button>
                             </div>
                         </div>
                     </form>

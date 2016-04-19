@@ -53,7 +53,7 @@
                             <div class="user_section">
                                 <a href="#add_question_list" class="pull-left" data-toggle="modal" data-hover="View All Added Question"><span>View All Added Question</span></a>
                             </div>
-                            <button type="submit" class="btn btn_user  btn_signup pull-right">ADD</button>
+                            <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">ADD</button>
                         </div>
                     </form>
                     <!--==============Question List Modal===============-->
