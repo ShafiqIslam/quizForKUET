@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-04-17 13:11:44
+Date: 2016-04-19 13:49:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,12 +35,14 @@ CREATE TABLE `exams` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of exams
 -- ----------------------------
-INSERT INTO `exams` VALUES ('1', null, 'test', 't', 't', '20', '2016-04-15 10:00:00', '5', null, null, '0000-00-00 00:00:00', '%Wgw$8OP', '2016-04-17 08:42:40', '2016-04-17 08:42:40');
+INSERT INTO `exams` VALUES ('1', '1', 'test222', 't', 't', '20', null, '5', null, null, '2016-04-19 17:20:00', '%Wgw$8OP', '2016-04-17 08:42:40', '2016-04-19 09:05:58');
+INSERT INTO `exams` VALUES ('2', '1', 'Test', 'Data', '4200', '20', '2016-04-19 17:00:00', '6', null, null, '2016-04-19 17:20:00', 'jR/B%J_j', '2016-04-18 21:30:39', '2016-04-18 21:30:39');
+INSERT INTO `exams` VALUES ('3', '1', 'First', 'Data', '4200', '20', '2016-04-19 17:00:00', '4', '1', null, '2016-04-19 17:20:00', 'lrln;HvH', '2016-04-18 22:21:07', '2016-04-18 22:21:07');
 
 -- ----------------------------
 -- Table structure for `questions`
@@ -58,11 +60,13 @@ CREATE TABLE `questions` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of questions
 -- ----------------------------
+INSERT INTO `questions` VALUES ('1', 'This is first question for data...????? mmmmmmmmmm', 'Data', 'D', 'A', 'D', 'A', '1', '2016-04-18 22:24:46', '2016-04-19 09:12:03');
+INSERT INTO `questions` VALUES ('2', 'Once again a test question??? Ha ha ha...', 'A', 'B', 'C', 'B', 'C', '1', '2016-04-19 06:10:07', '2016-04-19 09:03:28');
 
 -- ----------------------------
 -- Table structure for `students`
@@ -72,16 +76,19 @@ CREATE TABLE `students` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) DEFAULT NULL,
   `roll` varchar(255) DEFAULT NULL,
+  `mobile` varchar(15) DEFAULT NULL,
   `marks` int(3) DEFAULT NULL,
   `exam_id` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of students
 -- ----------------------------
+INSERT INTO `students` VALUES ('3', 'islamshafiq03@gmail.com', '1007003', '01731858108', null, '1', '2016-04-19 07:10:15', '2016-04-19 07:10:15');
+INSERT INTO `students` VALUES ('4', 'islamshafiq03@gmail.com', '1007001', '01234567891', null, '1', '2016-04-19 08:28:35', '2016-04-19 08:28:35');
 
 -- ----------------------------
 -- Table structure for `teachers`
