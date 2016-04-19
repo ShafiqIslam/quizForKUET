@@ -36,43 +36,64 @@
 
                     <!--=========Modal of Students List==============-->
                     <div class="modal fade" id="stu_list" role="dialog">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog custom_dialog">
 
                             <!-- Modal content-->
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header custom_header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4>Students List</h4>
+                                    <h2 class="text-center">Students List</h2>
                                 </div>
-                                <div class="modal-body">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <div class="col-sm-6">
-                                                    Student's Email
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    Student's Roll
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    Student's Mobile No.
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="col-sm-6">
-                                                    students@gmail.com
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    123456
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    01711112233
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                <div class="modal-body custom_body">
+
+                                    <table class="table table-responsive table-hover">
+                                            <th>Student's Email</th>
+                                            <th>Student's Roll</th>
+                                            <th>Student's Mobile</th>
+                                            <th>Option</th>
+                                            <tr>  
+                                                <td> <a href="#">students@gmail.com</a></td>
+                                                <td><a href="">123456</a></td>
+                                                <td><a href="">01711112233</a></td>
+                                                <td><button class="btn btn-warning">DELETE</button></td>   
+                                            </tr>
+                                            <tr>  
+                                                <td> <a href="#">students@gmail.com</a></td>
+                                                <td><a href="">123456</a></td>
+                                                <td><a href="">01711112233</a></td>
+                                                <td><button class="btn btn-warning">DELETE</button></td>   
+                                            </tr>
+                                            <tr>  
+                                                <td> <a href="#">students@gmail.com</a></td>
+                                                <td><a href="">123456</a></td>
+                                                <td><a href="">01711112233</a></td>
+                                                <td><button class="btn btn-warning">DELETE</button></td>   
+                                            </tr>
+                                            <tr>  
+                                                <td> <a href="#">students@gmail.com</a></td>
+                                                <td><a href="">123456</a></td>
+                                                <td><a href="">01711112233</a></td>
+                                                <td><button class="btn btn-warning">DELETE</button></td>   
+                                            </tr>
+                                            <tr>  
+                                                <td> <a href="#">students@gmail.com</a></td>
+                                                <td><a href="">123456</a></td>
+                                                <td><a href="">01711112233</a></td>
+                                                <td><button class="btn btn-warning">DELETE</button></td>   
+                                            </tr>
+                                            <tr>  
+                                                <td> <a href="#">students@gmail.com</a></td>
+                                                <td><a href="">123456</a></td>
+                                                <td><a href="">01711112233</a></td>
+                                                <td><button class="btn btn-warning">DELETE</button></td>   
+                                            </tr>
+                                            <tr>  
+                                                <td> <a href="#">students@gmail.com</a></td>
+                                                <td><a href="">123456</a></td>
+                                                <td><a href="">01711112233</a></td>
+                                                <td><button class="btn btn-warning">DELETE</button></td>   
+                                            </tr>
+                                        </table>
                                 </div>
                             </div>
                         </div>

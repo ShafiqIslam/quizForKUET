@@ -828,3 +828,41 @@ button:focus{
     pointer-events: none;
     cursor: default;
 }
+
+
+
+
+@media (min-width: 768px){
+    .custom_dialog {
+        width: 960px;
+        margin: 30px auto;
+    }
+
+    .custom_body{
+        max-height: 400px;
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+
+.custom_body .btn-warning{
+
+}
+
+.modal-body td, .modal-body th{
+    font-size: 18px;
+}
+.modal-header .close {
+    font-size: 50px;
+}
+table td a{
+    display: block;
+}
+
+.btn{
+    outline: none !important;
+}
+.modal .custom_header{
+    border-bottom: 0;
+}

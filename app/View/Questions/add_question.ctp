@@ -58,61 +58,55 @@
                     </form>
                     <!--==============Question List Modal===============-->
                     <div class="modal fade" id="add_question_list" role="dialog">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog custom_dialog">
 
                             <!-- Modal content-->
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header custom_header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4>Add Question List</h4>
+                                    <h2 class="text-center">Add Question List</h2>
                                 </div>
-                                <div class="modal-body">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <div class="col-sm-3">
-                                                    SQuestion Name
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    Option-A
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    Option-B
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    Option-C
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    Option-D
-                                                </div>
-                                                <div class="col-sm-1">
-                                                    Correct Answer
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="col-sm-3">
-                                                    What are the parts of a computer?
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    3 Parts
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    2 Parts
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    4 Parts
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    None of them
-                                                </div>
-                                                <div class="col-sm-1">
-                                                    Option-A
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                <div class="modal-body custom_body">  
+                                   <table class="table table-responsive table-hover">
+                                       <th>Question Name</th>
+                                       <th>Answer</th>
+                                           <tr>
+                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
+                                               <td><a href="#">A - 1997</a></td>
+                                           </tr>
+                                           <tr>
+                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
+                                               <td><a href="#">A - 1997</a></td>
+                                           </tr>
+                                           <tr>
+                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
+                                               <td><a href="#">A - 1997</a></td>
+                                           </tr>
+                                           <tr>
+                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
+                                               <td><a href="#">A - 1997</a></td>
+                                           </tr>
+                                           <tr>
+                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
+                                               <td><a href="#">A - 1997</a></td>
+                                           </tr>
+                                           <tr>
+                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
+                                               <td><a href="#">A - 1997</a></td>
+                                           </tr>
+                                           <tr>
+                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
+                                               <td><a href="#">A - 1997</a></td>
+                                           </tr>
+                                           <tr>
+                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
+                                               <td><a href="#">A - 1997</a></td>
+                                           </tr>
+                                           <tr>
+                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
+                                               <td><a href="#">A - 1997</a></td>
+                                           </tr>
+                                   </table>
                                 </div>
                             </div>
                         </div>
