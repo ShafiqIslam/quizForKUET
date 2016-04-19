@@ -51,15 +51,21 @@
                                         <th>Student's Roll</th>
                                         <th>Student's Mobile</th>
                                         <th>Option</th>
-                                        <?php foreach($exam_details['Student'] as $key => $item) {?>
-                                        <tr>
-                                            <td> <?php echo $item['email'];?></td>
-                                            <td><?php echo $item['roll'];?></td>
-                                            <td><?php echo $item['mobile'];?></td>
-                                            <td>
-                                                <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_student', $item['id']), array( 'class' => 'btn btn-warning'), __('Are you sure you want to delete # %s?', $item['roll'])); ?>
-                                            </td>
-                                        </tr>
+                                        <?php if(!empty($exam_details['Student'])) { ?>
+                                            <?php foreach($exam_details['Student'] as $key => $item) {?>
+                                            <tr>
+                                                <td> <?php echo $item['email'];?></td>
+                                                <td><?php echo $item['roll'];?></td>
+                                                <td><?php echo $item['mobile'];?></td>
+                                                <td>
+                                                    <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_student', $item['id']), array( 'class' => 'btn btn-warning'), __('Are you sure you want to delete # %s?', $item['roll'])); ?>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
+                                        <?php } else { ?>
+                                            <tr>
+                                                <td colspan="4">No Students assigned yet.</td>
+                                            </tr>
                                         <?php } ?>
                                     </table>
                                 </div>

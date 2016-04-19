@@ -6,7 +6,7 @@
                 <?php echo $this->element('quiz_tab'); ?>
                 <div class="set_quiz_section col-sm-12">
                     <form class="form-horizontal col-sm-10 quiz_form" method="post" action="" role="form" id="add_ques_form">
-                        <input type="hidden" name="data[Question][exam_id]" value="">
+                        <input type="hidden" name="data[Question][exam_id]" value="<?php echo $this->request->data['Question']['exam_id'];?>">
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Question:</label>
                             <div class="col-sm-9">
@@ -51,11 +51,46 @@
                         </div>
                         <div class="form-group">
                             <div class="user_section">
-                                <a href="#" class="pull-left" data-hover="View All Added Question"><span>View All Added Question</span></a>
+                                <a href="#add_question_list" class="pull-left" data-toggle="modal" data-hover="View All Added Question"><span>View All Added Question</span></a>
                             </div>
                             <button type="submit" class="btn btn_user  btn_signup pull-right">UPDATE</button>
                         </div>
                     </form>
+
+                    <!--==============Question List Modal===============-->
+                    <div class="modal fade" id="add_question_list" role="dialog">
+                        <div class="modal-dialog custom_dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header custom_header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2 class="text-center">Add Question List</h2>
+                                </div>
+                                <div class="modal-body custom_body">
+                                    <table class="table table-responsive table-hover">
+                                        <th>Question Name</th>
+                                        <th>Action</th>
+                                        <?php if(!empty($exam_details['Question'])) { ?>
+                                            <?php foreach($exam_details['Question'] as $key => $item) {?>
+                                                <tr>
+                                                    <td><?php echo $item['question'];?></td>
+                                                    <td>
+                                                        <?php echo $this->Html->link(__('Edit'), array('action' => 'edit_question', $item['id']), array( 'class' => 'btn btn-warning')); ?>
+                                                        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_question', $item['id']), array( 'class' => 'btn btn-warning'), __('Are you sure you want to delete # %s?', $item['id'])); ?>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        <?php } else { ?>
+                                            <tr>
+                                                <td colspan="4">No Questions in this quiz yet.</td>
+                                            </tr>
+                                        <?php } ?>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--modal colse-->
                 </div>
             </div>  
         </div>

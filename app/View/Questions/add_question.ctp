@@ -68,44 +68,23 @@
                                 </div>
                                 <div class="modal-body custom_body">  
                                    <table class="table table-responsive table-hover">
-                                       <th>Question Name</th>
-                                       <th>Answer</th>
-                                           <tr>
-                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
-                                               <td><a href="#">A - 1997</a></td>
-                                           </tr>
-                                           <tr>
-                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
-                                               <td><a href="#">A - 1997</a></td>
-                                           </tr>
-                                           <tr>
-                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
-                                               <td><a href="#">A - 1997</a></td>
-                                           </tr>
-                                           <tr>
-                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
-                                               <td><a href="#">A - 1997</a></td>
-                                           </tr>
-                                           <tr>
-                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
-                                               <td><a href="#">A - 1997</a></td>
-                                           </tr>
-                                           <tr>
-                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
-                                               <td><a href="#">A - 1997</a></td>
-                                           </tr>
-                                           <tr>
-                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
-                                               <td><a href="#">A - 1997</a></td>
-                                           </tr>
-                                           <tr>
-                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
-                                               <td><a href="#">A - 1997</a></td>
-                                           </tr>
-                                           <tr>
-                                               <td><a href="#">When did Bangladesh get its independence?</a></td>
-                                               <td><a href="#">A - 1997</a></td>
-                                           </tr>
+                                        <th>Question Name</th>
+                                        <th>Action</th>
+                                        <?php if(!empty($exam_details['Question'])) { ?>
+                                            <?php foreach($exam_details['Question'] as $key => $item) {?>
+                                               <tr>
+                                                   <td><?php echo $item['question'];?></td>
+                                                   <td>
+                                                       <?php echo $this->Html->link(__('Edit'), array('action' => 'edit_question', $item['id']), array( 'class' => 'btn btn-warning')); ?>
+                                                       <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_question', $item['id']), array( 'class' => 'btn btn-warning'), __('Are you sure you want to delete # %s?', $item['id'])); ?>
+                                                   </td>
+                                               </tr>
+                                            <?php } ?>
+                                        <?php } else { ?>
+                                            <tr>
+                                                <td colspan="4">No Questions in this quiz yet.</td>
+                                            </tr>
+                                        <?php } ?>
                                    </table>
                                 </div>
                             </div>
