@@ -30,7 +30,7 @@
                             <div class="user_section">
                                 <a href="#stu_list" class="pull-left" data-toggle="modal" data-hover="View All Added Student"><span>View All Added Student</span></a>
                             </div>
-                            <button type="submit" class="btn btn_user  btn_signup pull-right">ADD</button>
+                            <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">ADD</button>
                         </div>
                     </form>
 
