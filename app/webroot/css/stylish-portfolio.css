@@ -767,6 +767,7 @@ button:focus{
 .disabled_link {
     pointer-events: none;
     cursor: default;
+    opacity: 0.5;
 }
 
 
@@ -818,7 +819,7 @@ table td a{
     color: inherit;
     background: none;
     cursor: pointer;
-    padding: 25px 80px;
+    padding: 10px 15px;
     display: inline-block;
     margin: 15px 30px;
     text-transform: uppercase;
