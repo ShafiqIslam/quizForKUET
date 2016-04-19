@@ -20,7 +20,6 @@ class StudentsController extends AppController {
 	public function add_students ($exam_id) {
 		$exam = new ExamsController();
 		$exam_details = $exam->exam_all_data($exam_id);
-		#AuthComponent::_setTrace($exam_details);
 		$this->set(compact('exam_details'));
 
 		if($this->request->is('post')) {
@@ -56,24 +55,22 @@ class StudentsController extends AppController {
 		}
 	}
 
-	public function edit_student ($id) {
+	public function delete_student ($id) {
+
+		$this->Student->id = $id;
 		if (!$this->Student->exists($id)) {
-			throw new NotFoundException(__('Invalid Student'));
+			throw new NotFoundException(__('Invalid quiz'));
 		}
+		$this->Student->recursive = -1;
+		$student_data = $this->Student->findById($id);
 
-		if($this->request->is('post')) {
-			$this->Question->id = $id;
-			$this->Question->save($this->request->data);
-			$this->Session->setFlash(__('Question Updated.'), 'default', array('class' => 'success'));
-			return $this->redirect(array('controller'=>'questions', 'action' => 'edit_question', $id));
+		$this->request->allowMethod('post', 'delete');
+		if ($this->Student->delete()) {
+			$this->Session->setFlash(__('Student Deleted.'), 'default', array('class' => 'success'));
 		} else {
-			$options = array('conditions' => array('Question.' . $this->Question->primaryKey => $id));
-			$this->request->data = $this->Question->find('first', $options);
+			$this->Session->setFlash(__('Student can\'t be deleted right now.'), 'default', array('class' => 'error'));
 		}
-
-		$exam = new ExamsController();
-		$exam_details = $exam->exam_all_data($this->request->data['Student']['exam_id']);
-		$this->set(compact('exam_details'));
+		return $this->redirect(array('action' => 'add_students', $student_data['Student']['exam_id']));
 	}
 
 	private function _send_mail_to_student($mail, $roll, $exam_details) {
