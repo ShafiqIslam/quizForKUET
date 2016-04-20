@@ -56,13 +56,13 @@ header .greet{
 ul.slides {
     list-style: none;
     padding: 0;
-    //margin: 19% 0 0 0;
     width: 41%;
+
 }
 
 ul.slides li {
   margin: 0;
-  background: rgba(10, 10, 90, 0.5);
+  background: rgba(0, 204, 102, 0.5);
   padding: 3% 10% 10% 10%;
   color: #fff;
   font-size: 16px;
@@ -82,11 +82,6 @@ ul.slides li {
   z-index: 8;
   transition: transform 1.4s cubic-bezier(0.01, 1, 0.91, 1) 0.5s;
 }
- /*@media all and (//max-width: 760px) {
-
-ul.slides li { font-size: 20vw; }
-}
-*/
 
 ul.slides li.active { z-index: 10; }
 
@@ -117,8 +112,8 @@ button:focus{
 }
 
 #menu-toggle{
-    color: #fff;
-    border : 1px solid #fff;
+    color: rgb(0, 204, 102);
+    border : 1px solid rgb(0, 204, 102);
 }
 
 
@@ -130,9 +125,17 @@ button:focus{
     //color: rgba(255, 255, 255, 0.48);
 }
 
+.modal-header {
+    border-bottom: none;
+    background: rgb(0, 204, 102);
+    color: #fff;
+}
+
 .modal-header .close {
     margin-top: -21px;
     margin-right: -8px;
+    color: #fff;
+    opacity: 1;
 }
 
 .about a{
@@ -159,7 +162,7 @@ button:focus{
     height: 100%;
     margin-right: -250px;
     overflow-y: auto;
-    background: #222;
+    background: rgb(0, 204, 102);
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -ms-transition: all 0.4s ease 0s;
@@ -184,7 +187,8 @@ button:focus{
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999;
+    color: #fff;
+    font-size: 17px;
 }
 
 .sidebar-nav li a:hover {
@@ -205,7 +209,8 @@ button:focus{
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999;
+    color: #fff;
+    font-size: 25px;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -301,7 +306,7 @@ button:focus{
 }
 
 .form-control {
-    font-size: 17px;
+    font-size: 15px;
     height: 37px;
 }
 .modal{
@@ -315,7 +320,7 @@ button:focus{
 .user_section a{
     position: relative;
     display: inline-block;
-    margin: 15px 25px;
+    //margin: 15px 25px;
     outline: none;
     color: #fff;
     text-decoration: none;
@@ -342,13 +347,13 @@ button:focus{
 
 .user_section a {
     overflow: hidden;
-    margin: 0 15px;
+    //margin: 20px 0px 0px 15px;
 }
 
 .user_section a span {
     display: block;
     padding: 15px 30px;
-    background: #368918;
+    background: rgb(0, 204, 102);
     -webkit-transition: -webkit-transform 0.3s;
     -moz-transition: -moz-transform 0.3s;
     transition: transform 0.3s;
@@ -364,7 +369,7 @@ button:focus{
     height: 100%;
     background: #fff;
     text-align: center;
-    color: #368918;
+    color: rgb(0, 204, 102);
     content: attr(data-hover);
     -webkit-transition: -webkit-transform 0.3s;
     -moz-transition: -moz-transform 0.3s;
@@ -427,11 +432,17 @@ button:focus{
 }
 .nav-tabs > li a:hover{
     color: #fff;
-    background-color: green;
+    background-color: rgb(0, 204, 102);
+    border-bottom: none;
 }
 .nav-tabs > li a{
     color: #fff;
-    background-color: green;
+    background-color: rgb(0, 204, 102);
+    opacity: 1;
+    border-radius: 0;
+}
+.nav-tabs.nav-justified > li > a{
+    border-radius: 0;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     color: #fff;
@@ -734,7 +745,7 @@ button:focus{
 .flash_message{
     background: transparent;
     z-index: 100;
-    box-shadow: 0px 0px 4px black;
+    box-shadow: 0px 2px 10px #fff;
     padding: 0px 0px;
     margin-top: 2%;
     position: absolute;
@@ -742,10 +753,10 @@ button:focus{
     right: 0;
 }
 #flashMessage{
-    font-size: 18px;
+    font-size: 23px;
     color:#fff;
     text-align: center;
-    padding: 20px 0px;
+    padding: 15px 0px;
 }
 .flash_close_btn{
     float: right;
@@ -757,7 +768,7 @@ button:focus{
 }
 
 .success {
-    background: green;
+    background: rgb(0, 204, 102);
 }
 
 .error {
@@ -788,7 +799,14 @@ button:focus{
 }
 
 .custom_body .btn-warning{
-
+    //color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+.btn-warning:hover {
+    //color: #fff;
+    background-color: #FD9F1B;
+    border-color: #d58512;
 }
 
 .modal-body td, .modal-body th{
@@ -816,12 +834,13 @@ table td a{
     border: none;
     font-family: inherit;
     font-size: inherit;
-    color: inherit;
+    color: #fff;
+    font-size: 20px;
     background: none;
     cursor: pointer;
     padding: 10px 15px;
     display: inline-block;
-    margin: 2px 25px;
+    //margin: 2px 25px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -844,9 +863,9 @@ table td a{
 
 /* Button 2 */
 .btn-2 {
-    background: #cb4e4e;
+    background: rgb(0, 204, 102);
     color: #fff;
-    box-shadow: 0 6px #ab3c3c;
+    box-shadow: 0 6px rgb(0, 146, 73);
     -webkit-transition: none;
     -moz-transition: none;
     transition: none;
@@ -858,7 +877,8 @@ table td a{
 }
 
 .btn-2a:hover {
-    box-shadow: 0 4px #ab3c3c;
+    box-shadow: 0 4px rgb(0, 146, 73);
+    color: #ededed;
     top: 2px;
 }
 
@@ -867,3 +887,26 @@ table td a{
     top: 6px;
 }
 
+.add_question_btn{
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.add_stu_btn{
+    margin-top: 50px;
+    margin-left: 15px; 
+    margin-right: 15px;
+}
+.exam_unfinish{
+    color: red;
+    text-shadow: 0px 1px 0px #ede;
+}
+
+.btn:active, .btn.active, .bt:focus {
+    background-image: none;
+    outline: 0;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     outline-offset: 0px;
+}

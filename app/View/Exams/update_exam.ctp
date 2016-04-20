@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="user_section">
+                            <div class="user_section add_question_btn">
                                 <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">SUBMIT</button>
                             </div>
                         </div>

@@ -50,10 +50,10 @@
                         </div>
                         </div>
                         <div class="form-group">
-                            <div class="user_section">
+                            <div class="user_section add_question_btn">
                                 <a href="#add_question_list" class="pull-left" data-toggle="modal" data-hover="View All Added Question"><span>View All Added Question</span></a>
+                                <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">ADD</button>
                             </div>
-                            <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">ADD</button>
                         </div>
                     </form>
                     <!--==============Question List Modal===============-->
@@ -68,8 +68,8 @@
                                 </div>
                                 <div class="modal-body custom_body">  
                                    <table class="table table-responsive table-hover">
-                                        <th>Question Name</th>
-                                        <th>Action</th>
+                                        <th class="text-center">Question Name</th>
+                                        <th class="text-center">Action</th>
                                         <?php if(!empty($exam_details['Question'])) { ?>
                                             <?php foreach($exam_details['Question'] as $key => $item) {?>
                                                <tr>
@@ -82,7 +82,7 @@
                                             <?php } ?>
                                         <?php } else { ?>
                                             <tr>
-                                                <td colspan="4">No Questions in this quiz yet.</td>
+                                                <td colspan="4" class="exam_unfinish">No Questions in this quiz yet.</td>
                                             </tr>
                                         <?php } ?>
                                    </table>

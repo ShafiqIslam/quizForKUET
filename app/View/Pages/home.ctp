@@ -111,7 +111,7 @@
                                     <input type="password" name="data[Teacher][confirm_password]" class="form-control" id="con_pass" placeholder="Confirm Password">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn_user  btn_signup pull-right">SUBMIT</button>
+                                    <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">SUBMIT</button>
                                 </div>
                             </form>
                         </div>
@@ -141,7 +141,7 @@
                                     <input type="password" name="data[Teacher][password]" class="form-control" id="pass" placeholder="Password">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn_user btn_signup pull-right">LOGIN</button>
+                                    <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">SUBMIT</button>
                                 </div>
                             </form>
                         </div>

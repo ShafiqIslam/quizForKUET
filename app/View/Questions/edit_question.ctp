@@ -50,10 +50,10 @@
                         </div>
                         </div>
                         <div class="form-group">
-                            <div class="user_section">
+                            <div class="user_section add_question_btn">
                                 <a href="#add_question_list" class="pull-left" data-toggle="modal" data-hover="View All Added Question"><span>View All Added Question</span></a>
+                                <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">UPDATE</button>
                             </div>
-                            <button type="submit" class="btn btn_user  btn_signup pull-right">UPDATE</button>
                         </div>
                     </form>
 
@@ -83,7 +83,7 @@
                                             <?php } ?>
                                         <?php } else { ?>
                                             <tr>
-                                                <td colspan="4">No Questions in this quiz yet.</td>
+                                                <td class="exam_unfinish" colspan="4">No Questions in this quiz yet.</td>
                                             </tr>
                                         <?php } ?>
                                     </table>

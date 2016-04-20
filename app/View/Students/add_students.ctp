@@ -27,10 +27,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="user_section">
+                            <div class="user_section add_stu_btn">
                                 <a href="#stu_list" class="pull-left" data-toggle="modal" data-hover="View All Added Student" id="open_modal"><span>View All Added Student</span></a>
+                                <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">ADD</button>
                             </div>
-                            <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">ADD</button>
                         </div>
                     </form>
 
@@ -64,7 +64,7 @@
                                             <?php } ?>
                                         <?php } else { ?>
                                             <tr>
-                                                <td colspan="4">No Students assigned yet.</td>
+                                                <td colspan="4" class="exam_unfinish">No Students assigned yet.</td>
                                             </tr>
                                         <?php } ?>
                                     </table>

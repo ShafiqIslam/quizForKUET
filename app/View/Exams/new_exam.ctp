@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group">
                             <div class="user_section">
-                                <button type="submit" data-hover="CREATE" class="pull-right"><span>SUBMIT</span></button>
+                                <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">SUBMIT</button>
                             </div>
                         </div>
                     </form>
