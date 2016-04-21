@@ -917,3 +917,18 @@ table td a{
     font-size: 15px;
     color: red;
 }
+.quiz_overlay {
+    position: absolute;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    color: #000000;
+}
+
+.quiz_start_overlay {
+}
+.quiz_finish_overlay {
+}
