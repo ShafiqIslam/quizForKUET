@@ -63,7 +63,7 @@
 </div>
 
 <div class="quiz_overlay quiz_start_overlay" style="">
-    <form class="form-horizontal col-sm-4" id="stu_login" role="form" method="post" action="#">
+    <form class="form-horizontal col-sm-4" id="authenticate_student" role="form" method="post" action="<?php echo $this->webroot?>exam/authenticate_student" autocomplete="off">
         <h1>STUDENT'S LOGIN</h1>
         <hr>
         <div class="form-group">

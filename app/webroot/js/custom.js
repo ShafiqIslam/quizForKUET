@@ -81,7 +81,43 @@ $(document).ready(function() {
             disable_prev_btn(current_question);
         }
     });
+
+    $('#authenticate_student').submit(function (e) {
+        e.preventDefault();
+        var data = $('#authenticate_student').serializeObject();
+        var url = $('#authenticate_student').attr('action');
+
+        $.ajax({
+            type:'POST',
+            url:url,
+            data: data,
+            dataType: 'json',
+            cache: false,
+            success: function(response){
+                console.log(response);
+            },
+            error: function(response) {
+                console.log(response);
+            }
+        });
+    })
 });
+
+$.fn.serializeObject = function () {
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function () {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
 
 function disable_prev_btn(current_question) {
     if(current_question == 1) {
@@ -101,7 +137,7 @@ $(document).ready(function() {
         };
         $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
 
-    $('#singupForm, #loginForm, #add_student_form, #add_ques_form, #create_quiz_form, #stu_login').bootstrapValidator({
+    $('#singupForm, #loginForm, #add_student_form, #add_ques_form, #create_quiz_form, #authenticate_student').bootstrapValidator({
         message: 'This value is not valid',
         fields: {
             username: {
