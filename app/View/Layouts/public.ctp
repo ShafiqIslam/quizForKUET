@@ -19,7 +19,7 @@
     <?php
             echo $this->Html->meta('icon');
             //echo $this->Html->css('cake.generic');
-            echo $this->Html->css(array('bootstrap','normalize', 'stylish-portfolio'));
+            echo $this->Html->css(array('bootstrap','bootstrapValidator.min','normalize', 'stylish-portfolio'));
             echo $this->Html->script(array('jquery','bootstrap','slider', 'modernizr.custom', 'bootstrap-formhelpers-phone'));
         ?>
         

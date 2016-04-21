@@ -74,14 +74,14 @@
                             <h2 class="modal-title text-center">SIGNUP</h2>
                         </div>
                         <div class="modal-body">
-                            <form method="post" action="<?php echo $this->webroot;?>teachers/signup" role="form">
+                            <form data-toggle="validator" novalidate="true" method="post" id="singupForm" action="<?php echo $this->webroot;?>teachers/signup" role="form">
                                 <div class="form-group">
                                     <label class="control-label" for="name">Name:</label>
-                                    <input type="text" name="data[Teacher][name]" class="form-control" id="f_name" placeholder="Full Name">
+                                    <input type="text" name="data[Teacher][name]" class="form-control" id="f_name" placeholder="Full Name" required="">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="department">Department:</label>
-                                    <select name="data[Teacher][department]" class="form-control">
+                                    <select name="data[Teacher][department]" class="form-control" required="">
                                         <option value="">Select Department</option>
                                         <option value="CSE">CSE</option>
                                         <option value="EEE">EEE</option>
@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="designation">Designation:</label>
-                                    <select name="data[Teacher][designation]" class="form-control">
+                                    <select name="data[Teacher][designation]" class="form-control" required="">
                                         <option value="">Select Designation</option>
                                         <option value="Lecturer">Lecturer</option>
                                         <option value="Assistant Professor">Assistant Professor</option>
@@ -100,15 +100,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="email">Email:</label>
-                                    <input type="email" name="data[Teacher][email]" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" name="data[Teacher][email]" class="form-control" id="email" placeholder="Email" required="">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="password">Password:</label>
-                                    <input type="password" name="data[Teacher][password]" class="form-control" id="pass" placeholder="Password">
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="confirm password">Confirm Password:</label>
-                                    <input type="password" name="data[Teacher][confirm_password]" class="form-control" id="con_pass" placeholder="Confirm Password">
+                                    <input type="password" name="data[Teacher][password]" class="form-control" id="pass" placeholder="Password" required="">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">SUBMIT</button>
@@ -131,7 +127,7 @@
                             <h2 class="modal-title text-center">LOGIN</h2>
                         </div>
                         <div class="modal-body">
-                            <form method="post" action="<?php echo $this->webroot;?>teachers/login" role="form">
+                            <form method="post" id="loginForm" action="<?php echo $this->webroot;?>teachers/login" role="form">
                                 <div class="form-group">
                                     <label class="control-label" for="email">Email:</label>
                                     <input type="email" name="data[Teacher][email]" class="form-control" id="email" placeholder="Email Name">

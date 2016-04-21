@@ -255,7 +255,7 @@ button:focus{
 
 .welcome_section h1, .welcome_section h2{
     font-family: Lucida Calligraphy;
-    text-shadow: 4px 4px 4px #C5C3C3;
+    text-shadow: 2px 2px 2px #C5C3C3;
     color: #fff;
 }
 
@@ -909,4 +909,11 @@ table td a{
      -webkit-box-shadow: none;
      box-shadow: none;
      outline-offset: 0px;
+}
+
+
+.bv-form .help-block {
+    margin-bottom: 0;
+    font-size: 15px;
+    color: red;
 }

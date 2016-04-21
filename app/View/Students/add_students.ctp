@@ -10,20 +10,20 @@
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Email:</label>
                             <div class="col-sm-9">
-                                <input type="text" name="data[Student][email]" class="form-control" id="q_name" placeholder="Email">
+                                <input type="text" name="data[Student][email]" class="form-control" id="q_name" placeholder="Email" required="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Roll:</label>
                             <div class="col-sm-9">
-                                <input type="text" name="data[Student][roll]" class="form-control" id="s_name" placeholder="Roll">
+                                <input type="text" name="data[Student][roll]" class="form-control" id="s_name" placeholder="Roll" required="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Mobile No.:</label>
 
                             <div class="col-sm-9">
-                                <input type="text" name="data[Student][mobile]" data-format="+880 dddd-dddddd" class="form-control bfh-phone" id="s_name" placeholder="Subject">
+                                <input type="text" name="data[Student][mobile]" data-format="+880 dddd-dddddd" class="form-control bfh-phone" id="s_name" placeholder="Subject" required="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -50,7 +50,7 @@
                                         <th>Student's Email</th>
                                         <th>Student's Roll</th>
                                         <th>Student's Mobile</th>
-                                        <th>Option</th>
+                                        <th>Action</th>
                                         <?php if(!empty($exam_details['Student'])) { ?>
                                             <?php foreach($exam_details['Student'] as $key => $item) {?>
                                             <tr>

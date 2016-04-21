@@ -17,17 +17,17 @@
                         <li><input id="r4" name="r1" type="radio"><label for="r4">Energistically scale future-proof core competencies</label></li>
                     </ul>
                 </form>
-                <div class="quiz_direction">
+                <div class="quiz_direction user_section">
                     <div class="col-sm-2">
-                        <button type="reset" class="btn btn_user pull-left">RESTART</button>
+                        <button type="reset" class="btn btn_user btn-2 btn-2a pull-left">RESTART</button>
                     </div>
                     <div class="col-sm-2 col-sm-offset-2">
                         <span class="text-center"><h3 class="time_counter">TIME LEFT</h3></span>
                     </div>
                     <div class="col-sm-4 col-sm-offset-2">
                         <span class="pull-right">
-                            <button type="button" class="btn btn_user">PREVIOUS</button>  
-                            <button type="button" class="btn btn_user">NEXT</button>
+                            <button type="button" class="btn btn_user btn-2 btn-2a">PREVIOUS</button>  
+                            <button type="button" class="btn btn_user btn-2 btn-2a">NEXT</button>
                         </span>
                     </div>
                 </div>
