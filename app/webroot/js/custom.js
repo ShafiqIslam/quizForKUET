@@ -101,7 +101,7 @@ $(document).ready(function() {
         };
         $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
 
-    $('#singupForm, #loginForm, #add_student_form, #add_ques_form, #create_quiz_form').bootstrapValidator({
+    $('#singupForm, #loginForm, #add_student_form, #add_ques_form, #create_quiz_form, #stu_login').bootstrapValidator({
         message: 'This value is not valid',
         fields: {
             username: {

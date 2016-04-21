@@ -56,13 +56,34 @@
 </section>
 
 <div class="quiz_overlay quiz_not_started_overlay" style="display: none;">
-    Quiz hasn't started yet. please wait for <span>00:00</span>.
+    <div class="quiz_star_notify">
+        <h1>Quiz hasn't started yet.</h1>
+        <h2>Please wait for <span>00:00</span>.</h2>
+    </div>
 </div>
 
-<div class="quiz_overlay quiz_start_overlay" style="display: none;">
-    <input type="text" name="roll">
-    <input type="password" name="password">
-    <input type="submit">
+<div class="quiz_overlay quiz_start_overlay" style="">
+    <form class="form-horizontal col-sm-4" id="stu_login" role="form" method="post" action="#">
+        <h1>STUDENT'S LOGIN</h1>
+        <hr>
+        <div class="form-group">
+            <label class="control-label col-sm-3" for="email">Roll</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="roll" placeholder="Enter Your Roll No." required="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-3" for="email">Password</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" name="password" placeholder="Password" required="">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="user_section stu_login">
+                <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup pull-right">SUBMIT</button>
+            </div>
+        </div>
+    </form>
 </div>
 
 <div class="quiz_overlay quiz_finish_overlay" style="display: none;">
