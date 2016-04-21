@@ -62,7 +62,7 @@
     </div>
 </div>
 
-<div class="quiz_overlay quiz_start_overlay" style="">
+<div class="quiz_overlay quiz_start_overlay" style="display: none">
     <form class="form-horizontal col-sm-4" id="authenticate_student" role="form" method="post" action="<?php echo $this->webroot?>exam/authenticate_student" autocomplete="off">
         <h1>STUDENT'S LOGIN</h1>
         <hr>
@@ -86,9 +86,13 @@
     </form>
 </div>
 
-<div class="quiz_overlay quiz_finish_overlay" style="display: none;">
-    <button>Submit</button>
-    <button>Review</button>
+<div class="quiz_overlay" style="">
+    <div class="quiz_finish_overlay col-sm-3">
+        <div class="user_section stu_rewiew">
+        <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup col-sm-12">SUBMIT</button>
+        <button type="submit" class="btn btn-2 btn-2a btn_user btn_signup col-sm-12">REVIEW</button>
+    </div>
+    </div>
 </div>
 
 <?php echo $this->Html->script(array('svgcheckbx')); ?>

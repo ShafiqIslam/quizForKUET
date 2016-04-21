@@ -924,7 +924,8 @@ table td a{
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 204, 102, 1);
+    //background: rgba(0, 204, 102, 1);
+    background: #5ACA87;
     color: #fff;
 }
 .quiz_star_notify{
@@ -963,4 +964,16 @@ table td a{
     margin-top: 10px;
 }
 .quiz_finish_overlay {
+    background: #fff;
+    position: absolute;
+    top: 28%;
+    left: 34%;
+    padding: 30px;
+}
+.stu_rewiew button{
+    margin: 0px 0px 28px 0px;
+    padding: 30px 0px;
+}
+.stu_rewiew button:last-child{
+    margin-bottom: 0px;
 }
