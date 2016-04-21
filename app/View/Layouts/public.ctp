@@ -19,8 +19,8 @@
     <?php
             echo $this->Html->meta('icon');
             //echo $this->Html->css('cake.generic');
-            echo $this->Html->css(array('bootstrap','bootstrapValidator.min','normalize', 'stylish-portfolio'));
-            echo $this->Html->script(array('jquery','bootstrap','slider', 'modernizr.custom', 'bootstrap-formhelpers-phone'));
+            echo $this->Html->css(array('bootstrap','jquery-ui','bootstrapValidator.min','normalize','rome', 'stylish-portfolio'));
+            echo $this->Html->script(array('jquery','bootstrap','jquery-ui.min','slider', 'modernizr.custom', 'bootstrap-formhelpers-phone','rome'));
         ?>
         
         <?php
@@ -78,6 +78,6 @@
     <?php echo $this->fetch('content'); ?>
     <!-- Footer -->
 
-    <?php echo $this->Html->script(array('bootstrapValidator.min', 'validator.min', 'custom')); ?>
+    <?php echo $this->Html->script(array('bootstrapValidator.min', 'validator.min', 'example', 'custom')); ?>
 </body>
 </html>

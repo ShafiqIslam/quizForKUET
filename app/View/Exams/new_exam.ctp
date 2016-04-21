@@ -27,12 +27,21 @@
 
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-3" for="name">Starting At:</label>
+                            <label class="control-label col-sm-3" for="dt">Starting At:</label>
                             <div class="col-sm-9">
-                                <input type="datetime-local" name="data[Exam][starting_at]" class="form-control" id="starting_at" placeholder="Begins In" required="">
+                                <input type="datetime-local" name="data[Exam][starting_at]" id="dt" class="form-control" id="starting_at" placeholder="Begins In" required="">
                             </div>
-
                         </div>
+                        <!--
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="name">Starting At:</label>
+                            <div class='input-group date col-sm-9' id='datetimepicker1'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>-->
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Total time:</label>
                             <div class="col-sm-9">
