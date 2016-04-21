@@ -8,15 +8,30 @@
                     <h2>Estimate Time : 10 mins.</h2>
                     <hr>
                 </div>
+
                 <form class="ac-custom ac-radio ac-fill" autocomplete="off">
-                    <h2>Where do you proactively envision multimedia based expertise and cross-media growth strategies?</h2>
-                    <ul>
-                        <li><input id="r1" name="r1" type="radio"><label for="r1">Seamlessly visualize quality intellectual capital</label></li>
-                        <li><input id="r2" name="r1" type="radio"><label for="r2">Collaboratively administrate turnkey channels</label></li>
-                        <li><input id="r3" name="r1" type="radio"><label for="r3">Objectively seize scalable metrics</label></li>
-                        <li><input id="r4" name="r1" type="radio"><label for="r4">Energistically scale future-proof core competencies</label></li>
-                    </ul>
+                    <div id="question_1">
+                        <h2>Where do you proactively envision multimedia based expertise and cross-media growth strategies?</h2>
+                        <ul>
+                            <li><input id="r1" name="r1" type="radio"><label for="r1">Seamlessly visualize quality intellectual capital</label></li>
+                            <li><input id="r2" name="r1" type="radio"><label for="r2">Collaboratively administrate turnkey channels</label></li>
+                            <li><input id="r3" name="r1" type="radio"><label for="r3">Objectively seize scalable metrics</label></li>
+                            <li><input id="r4" name="r1" type="radio"><label for="r4">Energistically scale future-proof core competencies</label></li>
+                        </ul>
+                    </div>
+
+                    <div id="question_2" style="display: none">
+                        <h2>Where do you proactively envision multimedia based expertise and cross-media growth strategies222222222?</h2>
+                        <ul>
+                            <li><input id="r1" name="r2" type="radio"><label for="r1">Seamlessly visualize quality intellectual capital</label></li>
+                            <li><input id="r2" name="r2" type="radio"><label for="r2">Collaboratively administrate turnkey channels</label></li>
+                            <li><input id="r3" name="r2" type="radio"><label for="r3">Objectively seize scalable metrics</label></li>
+                            <li><input id="r4" name="r2" type="radio"><label for="r4">Energistically scale future-proof core competencies</label></li>
+                        </ul>
+                    </div>
                 </form>
+
+
                 <div class="quiz_direction user_section">
                     <div class="col-sm-2">
                         <button type="reset" class="btn btn_user btn-2 btn-2a pull-left">RESTART</button>
@@ -26,8 +41,10 @@
                     </div>
                     <div class="col-sm-4 col-sm-offset-2">
                         <span class="pull-right">
-                            <button type="button" class="btn btn_user btn-2 btn-2a">PREVIOUS</button>  
-                            <button type="button" class="btn btn_user btn-2 btn-2a">NEXT</button>
+                            <input type="hidden" name="current_question" value="1">
+                            <input type="hidden" name="total_question" value="2">
+                            <button type="button" class="btn btn_user btn-2 btn-2a prev_btn">PREVIOUS</button>
+                            <button type="button" class="btn btn_user btn-2 btn-2a next_btn">NEXT</button>
                         </span>
                     </div>
                 </div>
@@ -36,7 +53,21 @@
         <!-- /.row -->
     </div>
     <!-- /.container -->
-</section> 
-<?php
-    echo $this->Html->script(array('svgcheckbx'));
- ?>
+</section>
+
+<div class="quiz_overlay quiz_not_started_overlay" style="display: none;">
+    Quiz hasn't started yet. please wait for <span>00:00</span>.
+</div>
+
+<div class="quiz_overlay quiz_start_overlay" style="display: none;">
+    <input type="text" name="roll">
+    <input type="password" name="password">
+    <input type="submit">
+</div>
+
+<div class="quiz_overlay quiz_finish_overlay" style="display: none;">
+    <button>Submit</button>
+    <button>Review</button>
+</div>
+
+<?php echo $this->Html->script(array('svgcheckbx')); ?>

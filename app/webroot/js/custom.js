@@ -1,7 +1,3 @@
-
-
-
-
 $(document).ready(function() {
 	// Closes the sidebar menu
     $("#menu-close").click(function(e) {
@@ -66,33 +62,36 @@ $('#slideshow').dsSlider({
 
 
 /*---------Exam script set section----*/
-/*
-$(function(){
-    var items = $('.quiz_exam ul');
-    if(items.filter(':visible').length == 0){
-        items.first().show();
-        console.log(4);
-        $('#prev').addClass('disabled');
-    } else{
-       $('#prev').removeClass('disabled'); 
-    }
 
-    $('#next').click(function(e){
-        e.preventDefault();
+$(document).ready(function() {
+    var current_question = $('input[name=current_question]').val();
+    var total_question = $('input[name=total_question]').val();
+    disable_prev_btn(current_question);
 
-        var active = items.filter(':visible:last');
-        active.hide();
-
-        var next = active.next();
-        if (next.length) {
-             next.show();
-        }
-        if (next.length ==items.last()) {
-            $('#next').addClass('disabled');
+    $('.next_btn').click(function () {
+        var current_question_id = "#question_" + current_question;
+        $(current_question_id).hide();
+        
+        if(current_question == total_question) {
+            $('.quiz_finish_overlay').show();
+        } else {
+            current_question = parseInt(current_question) + 1;
+            current_question_id = "#question_" + current_question;
+            $(current_question_id).show();
+            disable_prev_btn(current_question);
         }
     });
 });
-*/
+
+function disable_prev_btn(current_question) {
+    if(current_question == 1) {
+        $('.prev_btn').addClass('disabled');
+    } else {
+        if($('.prev_btn').hasClass('disabled')) {
+            $('.prev_btn').removeClass('disabled');
+        }
+    }
+}
 
 
 $(document).ready(function() {
