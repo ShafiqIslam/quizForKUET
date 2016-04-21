@@ -48,6 +48,14 @@ $(document).ready(function(){
     }
 });
 
+  $(function() {
+    $( "#datepicker" ).datepicker({
+        controlType: 'select',
+        timeFormat: "h:mm TT",
+        ampm: true
+    });
+  });
+
 
 /*-----------------JS Slider------------------*/
 
