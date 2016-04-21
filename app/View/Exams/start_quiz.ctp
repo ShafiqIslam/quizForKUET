@@ -59,10 +59,12 @@
     Quiz hasn't started yet. please wait for <span>00:00</span>.
 </div>
 
-<div class="quiz_overlay quiz_start_overlay" style="display: none;">
-    <input type="text" name="roll">
-    <input type="password" name="password">
-    <input type="submit">
+<div class="quiz_overlay quiz_start_overlay">
+    <form id="authenticate_student" action="<?php echo $this->webroot?>exams/authenticate_student/1" method="post" autocomplete="off">
+        <input type="text" name="roll" placeholder="Put Your Roll Here">
+        <input type="password" name="password" value="">
+        <input type="submit">
+    </form>
 </div>
 
 <div class="quiz_overlay quiz_finish_overlay" style="display: none;">

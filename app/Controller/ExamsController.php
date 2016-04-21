@@ -97,18 +97,29 @@ class ExamsController extends AppController {
 
 		if($this->request->is('post')) {
 			$roll = $this->request->data['roll'];
-			$pass = $this->request->data['pass'];
+			$pass = $this->request->data['password'];
+
 			if (!$this->Exam->exists($exam_id)) {
 				die(json_encode(array('success' => false, 'msg' => 'Invalid Quiz')));
 			}
 
 			$this->Exam->recursive = 1;
-			$data = $this->Exam->find('all', array(
+			$data = $this->Exam->find('list', array(
+					'joins' => array(
+						array(
+							'table' => 'students',
+							'alias' => 'Student',
+							'type' => 'INNER',
+							'conditions' => array(
+								'Student.exam_id' => $exam_id
+							)
+						)
+					),
 					'conditions' => array(
 						'Exam.id' => $exam_id,
 						'Student.roll' => $roll,
-						'Exam.password' => AuthComponent::password($pass)
-					),
+						'Exam.password' => $pass
+					)
 				)
 			);
 			if(!empty($data)) {
