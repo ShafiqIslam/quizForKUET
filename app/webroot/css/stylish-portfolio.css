@@ -974,7 +974,9 @@ table td a{
 .stu_rewiew button:last-child{
     margin-bottom: 0px;
 }
-
+.quiz_not_start .fa{
+    color: #FDD835;
+}
 .quiz_not_start{
     position: absolute;
     top: 20%;
