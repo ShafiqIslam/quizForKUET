@@ -977,3 +977,9 @@ table td a{
 .stu_rewiew button:last-child{
     margin-bottom: 0px;
 }
+
+
+@media print {
+    .no_print {display: none;}
+    .print_this {display: block;}
+}

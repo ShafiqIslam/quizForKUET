@@ -37,7 +37,6 @@
                     <!--=========Modal of Students List==============-->
                     <div class="modal fade" id="stu_list" role="dialog">
                         <div class="modal-dialog custom_dialog">
-
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header custom_header">
