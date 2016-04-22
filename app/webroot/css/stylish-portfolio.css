@@ -940,6 +940,9 @@ table td a{
 .quiz_star_notify h2{
     text-indent: 7%;
 }
+.quiz_star_notify .finished_exam_h2{
+    text-indent: 0%;
+}
 .quiz_start_overlay  form{
     background: #fff;
     color: #000;
@@ -976,4 +979,10 @@ table td a{
 }
 .stu_rewiew button:last-child{
     margin-bottom: 0px;
+}
+
+.quiz_not_start{
+    position: absolute;
+    top: 20%;
+    left: 29.5%;
 }

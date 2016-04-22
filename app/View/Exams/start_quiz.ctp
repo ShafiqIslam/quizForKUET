@@ -138,7 +138,7 @@ $ending_at = new DateTime($exam['ending_at']);
     <?php echo $this->Html->css(array('TimeCircles'));?>
 
     <div class="quiz_overlay quiz_not_started_overlay">
-        <div class="quiz_star_notify">
+        <div class="quiz_star_notify quiz_not_start">
             <h1>Quiz has not started yet.</h1>
             <h2>Come Back Again in or, you can just wait :P</h2>
             <div id="DateCountdown" data-date="<?php echo $exam['starting_at']?>" style="width: 500px; height: 125px; padding: 0px; box-sizing: border-box;"></div>
@@ -154,7 +154,7 @@ $ending_at = new DateTime($exam['ending_at']);
     <div class="quiz_overlay quiz_not_started_overlay">
         <div class="quiz_star_notify">
             <h1>Sorry Buddy.</h1>
-            <h2>Exam Finished. You are late.</h2>
+            <h2 class="finished_exam_h2">Exam Finished. You are late.</h2>
         </div>
     </div>
 
