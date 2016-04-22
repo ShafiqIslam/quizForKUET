@@ -54,6 +54,11 @@ $(document).ready(function(){
     });
   });
 
+// clear form after reloading
+function clearInp() {
+    document.getElementsByTagName("input").value = "";
+}
+
 
 /*-----------------JS Slider------------------*/
 

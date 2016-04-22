@@ -82,7 +82,7 @@
                                 <div class="form-group">
                                     <label class="control-label" for="department">Department:</label>
                                     <select name="data[Teacher][department]" class="form-control" required="">
-                                        <option value="">Select Department</option>
+                                        <option selected="true" disabled="disabled" value="">Select Department</option>
                                         <option value="CSE">CSE</option>
                                         <option value="EEE">EEE</option>
                                         <option value="ECE">ECE</option>
@@ -91,7 +91,7 @@
                                 <div class="form-group">
                                     <label class="control-label" for="designation">Designation:</label>
                                     <select name="data[Teacher][designation]" class="form-control" required="">
-                                        <option value="">Select Designation</option>
+                                        <option selected="true" disabled="disabled" value="">Select Designation</option>
                                         <option value="Lecturer">Lecturer</option>
                                         <option value="Assistant Professor">Assistant Professor</option>
                                         <option value="Associated Professor">Associated Professor</option>
