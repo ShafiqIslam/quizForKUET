@@ -75,7 +75,7 @@
                                             <?php foreach($exam_details['Question'] as $key => $item) {?>
                                                <tr>
                                                    <td><?php echo $item['question'];?></td>
-                                                   <td>
+                                                   <td class="add_question_action pull-right">
                                                        <?php echo $this->Html->link(__('Edit'), array('action' => 'edit_question', $item['id']), array( 'class' => 'btn btn-warning')); ?>
                                                        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_question', $item['id']), array( 'class' => 'btn btn-warning'), __('Are you sure you want to delete # %s?', $item['id'])); ?>
                                                    </td>
