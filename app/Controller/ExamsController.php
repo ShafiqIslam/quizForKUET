@@ -82,7 +82,9 @@ class ExamsController extends AppController {
 
 	public function start_quiz ($exam_id) {
 		$exam_details = $this->exam_all_data($exam_id);
-		$this->set(compact('exam_details'));
+		$questions = $exam_details['Question'];
+		$exam = $exam_details['Exam'];
+		$this->set(compact('questions', 'exam'));
 	}
 
 	public function results($id){

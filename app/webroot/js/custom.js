@@ -67,11 +67,13 @@ $(document).ready(function() {
     var current_question = $('input[name=current_question]').val();
     var total_question = $('input[name=total_question]').val();
     disable_prev_btn(current_question);
+    var current_question_id = "";
+
+    start_counting();
 
     $('.next_btn').click(function () {
-        var current_question_id = "#question_" + current_question;
+        current_question_id = "#question_" + current_question;
         $(current_question_id).hide();
-        
         if(current_question == total_question) {
             $('.quiz_finish_overlay').show();
         } else {
@@ -79,7 +81,32 @@ $(document).ready(function() {
             current_question_id = "#question_" + current_question;
             $(current_question_id).show();
             disable_prev_btn(current_question);
+
+            update_current_question_showing (current_question);
         }
+    });
+
+    $('.prev_btn').click(function () {
+        var current_question_id = "#question_" + current_question;
+        if(current_question!=0){
+            $(current_question_id).hide();
+            current_question = parseInt(current_question) - 1;
+            current_question_id = "#question_" + current_question;
+            $(current_question_id).show();
+            disable_prev_btn(current_question);
+
+            update_current_question_showing (current_question);
+        }
+    });
+
+    $('#review_btn').click(function(){
+        $('.quiz_finish_overlay').hide();
+        current_question = 0;
+        current_question_id = "#question_" + current_question;
+        $(current_question_id).show();
+        disable_prev_btn(current_question);
+
+        update_current_question_showing (current_question);
     });
 
     $('#authenticate_student').submit(function (e) {
@@ -120,7 +147,7 @@ $.fn.serializeObject = function () {
 };
 
 function disable_prev_btn(current_question) {
-    if(current_question == 1) {
+    if(current_question == 0) {
         $('.prev_btn').addClass('disabled');
     } else {
         if($('.prev_btn').hasClass('disabled')) {
@@ -129,6 +156,28 @@ function disable_prev_btn(current_question) {
     }
 }
 
+function update_current_question_showing (current_question) {
+    $('#current_question_showing').html( parseInt(current_question) + 1 );
+}
+
+function start_counting() {
+    var rem_min = $('#remaining_time_min').html();
+    var rem_sec = $('#remaining_time_sec').html();
+
+    var total_rem_seconds = (parseInt(rem_min) * 60) + parseInt(rem_sec);
+
+    total_rem_seconds -= 1;
+    rem_sec = total_rem_seconds % 60;
+    rem_min = (total_rem_seconds - rem_sec) / 60;
+
+    if(rem_min<10) rem_min = "0" + rem_min;
+    if(rem_sec<10) rem_sec = "0" + rem_sec;
+    
+    $('#remaining_time_min').html(rem_min);
+    $('#remaining_time_sec').html(rem_sec);
+
+    setTimeout(start_counting, 1000);
+}
 
 $(document).ready(function() {
     // Generate a simple captcha
