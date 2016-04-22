@@ -18,6 +18,11 @@ class QuestionsController extends AppController {
 	public $components = array('Paginator', 'Session');
 
 	public function add_question ($id) {
+		$logged = $this->Session->read('logged');
+		if(empty($logged)) {
+			return $this->redirect(array('controller'=>'pages', 'action' => 'display', 'home'));
+		}
+
 		if($this->request->is('post')) {
 			$this->request->data['Question']['exam_id'] = $id;
 			$this->Question->save($this->request->data);
@@ -31,6 +36,11 @@ class QuestionsController extends AppController {
 	}
 
 	public function edit_question ($id) {
+		$logged = $this->Session->read('logged');
+		if(empty($logged)) {
+			return $this->redirect(array('controller'=>'pages', 'action' => 'display', 'home'));
+		}
+
 		if (!$this->Question->exists($id)) {
 			throw new NotFoundException(__('Invalid Question'));
 		}
@@ -55,7 +65,11 @@ class QuestionsController extends AppController {
 	}
 
 	public function delete_question ($id) {
-
+		$logged = $this->Session->read('logged');
+		if(empty($logged)) {
+			return $this->redirect(array('controller'=>'pages', 'action' => 'display', 'home'));
+		}
+		
 		$this->Question->id = $id;
 		if (!$this->Question->exists($id)) {
 			throw new NotFoundException(__('Invalid Question'));
