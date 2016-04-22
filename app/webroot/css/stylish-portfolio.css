@@ -986,3 +986,8 @@ table td a{
     top: 20%;
     left: 29.5%;
 }
+
+@media print {
+    .no_print {display: none;}
+    .print_this {display: block;}
+}

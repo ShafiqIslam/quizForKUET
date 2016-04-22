@@ -56,7 +56,6 @@ class StudentsController extends AppController {
 	}
 
 	public function delete_student ($id) {
-
 		$this->Student->id = $id;
 		if (!$this->Student->exists($id)) {
 			throw new NotFoundException(__('Invalid quiz'));
