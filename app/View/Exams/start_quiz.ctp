@@ -59,6 +59,7 @@ $ending_at = new DateTime($exam['ending_at']);
                     <div class="quiz_direction user_section">
                         <div class="col-sm-2">
                             <!--<button type="reset" class="btn btn_user btn-2 btn-2a pull-left">RESTART</button>-->
+                            <button type="button" class="btn btn_user btn-2 btn-2a prev_btn pull-left">PREVIOUS</button>
                         </div>
                         <div class="col-sm-2 col-sm-offset-2">
                             <span class="text-center">
@@ -72,7 +73,6 @@ $ending_at = new DateTime($exam['ending_at']);
                         <div class="col-sm-4 col-sm-offset-2">
                             <span class="pull-right">
                                 <input type="hidden" name="current_question" value="0">
-                                <button type="button" class="btn btn_user btn-2 btn-2a prev_btn">PREVIOUS</button>
                                 <button type="button" class="btn btn_user btn-2 btn-2a next_btn">NEXT</button>
                             </span>
                         </div>
@@ -114,8 +114,8 @@ $ending_at = new DateTime($exam['ending_at']);
     </div>
 
 
-    <div class="quiz_overlay quiz_finish_overlay" style="display: none">
-        <div class="col-sm-3">
+    <div class="quiz_overlay" style="display: none">
+        <div class="col-sm-3 quiz_finish_overlay">
             <div class="user_section stu_rewiew">
                 <button type="button" class="btn btn-2 btn-2a btn_user btn_signup col-sm-12" id="submit_btn">SUBMIT</button>
                 <button type="button" class="btn btn-2 btn-2a btn_user btn_signup col-sm-12" id="review_btn">REVIEW</button>
@@ -124,9 +124,9 @@ $ending_at = new DateTime($exam['ending_at']);
     </div>
 
     <div class="quiz_overlay quiz_submitted_overlay" style="display: none">
-        <div class="quiz_star_notify">
+        <div class="quiz_star_notify stu_result">
             <h1>You have achieved</h1>
-            <h2 id="obtained_marks"></h2> out of <h2 id=""><?php echo $exam['marks_per_ques'] * count($questions);?></h2>
+            <h2><span id="obtained_marks"></span> out of <?php echo $exam['marks_per_ques'] * count($questions);?></h2>
             <h3 id="performance_msg"></h3>
         </div>
     </div>

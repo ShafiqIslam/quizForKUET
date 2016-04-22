@@ -150,7 +150,15 @@ button:focus{
     margin-top: -2px;
     margin-bottom: 0px;
     color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
 }
+
+.quiz_direction{
+
+}
+
 
 /* Side Menu */
 
@@ -647,7 +655,7 @@ button:focus{
 }
 
 .quiz_direction{
-    margin-top: 30px
+    margin-top: 7%;
 }
 
 
@@ -931,7 +939,7 @@ table td a{
 .quiz_star_notify{
     position: absolute;
     top: 36%;
-    left: 35%;
+    left: 32.5%;
 }
 .quiz_star_notify h1{
     text-align: center;
@@ -961,8 +969,8 @@ table td a{
     margin-top: 10px;
 }
 .quiz_finish_overlay {
-    background: #fff;
     position: absolute;
+    background: #fff;
     top: 28%;
     left: 34%;
     padding: 30px;
@@ -980,10 +988,13 @@ table td a{
 .quiz_not_start{
     position: absolute;
     top: 20%;
-    left: 29.5%;
+    left: 25.5%;
+}
+.quiz_not_start h2{
+    text-align: center;
 }
 .time_circles {
-    margin-left: 2%;
+    margin-left: .8%;
 }
 
 @media print {
@@ -993,3 +1004,5 @@ table td a{
     .toggle {display: none;}
     .print_this {display: block;}
 }
+
+.time_counter
