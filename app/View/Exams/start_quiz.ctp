@@ -141,7 +141,7 @@ $ending_at = new DateTime($exam['ending_at']);
         <div class="quiz_star_notify quiz_not_start">
             <h1>Quiz has not started yet.</h1>
             <h2>Come Back Again in or, you can just wait <i class="fa fa-smile-o" aria-hidden="true"></i></h2>
-            <div id="DateCountdown" data-date="<?php echo $exam['starting_at']?>" style="width: 500px; height: 125px; padding: 0px; box-sizing: border-box;"></div>
+            <div id="DateCountdown" data-date="<?php echo $exam['starting_at']?>" style="width: 700px; height: 300px; padding: 0px; box-sizing: border-box;"></div>
         </div>
     </div>
 
