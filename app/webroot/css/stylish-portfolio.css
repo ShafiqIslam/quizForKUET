@@ -989,5 +989,8 @@ table td a{
 
 @media print {
     .no_print {display: none;}
+    .flash_message {display: none;}
+    .sidebar-nav {display: none;}
+    .toggle {display: none;}
     .print_this {display: block;}
 }

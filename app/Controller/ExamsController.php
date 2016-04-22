@@ -35,6 +35,11 @@ class ExamsController extends AppController {
 	}
 
 	public function update_exam($id) {
+		$logged = $this->Session->read('logged');
+		if(empty($logged)) {
+			return $this->redirect(array('controller'=>'pages', 'action' => 'display', 'home'));
+		}
+
 		$this->Exam->id = $id;
 		if (!$this->Exam->exists($id)) {
 			throw new NotFoundException(__('Invalid quiz'));
@@ -51,6 +56,11 @@ class ExamsController extends AppController {
 	}
 
 	public function delete_exam($id) {
+		$logged = $this->Session->read('logged');
+		if(empty($logged)) {
+			return $this->redirect(array('controller'=>'pages', 'action' => 'display', 'home'));
+		}
+
 		$this->Exam->id = $id;
 		if (!$this->Exam->exists($id)) {
 			throw new NotFoundException(__('Invalid quiz'));
@@ -88,6 +98,11 @@ class ExamsController extends AppController {
 	}
 
 	public function results($id){
+		$logged = $this->Session->read('logged');
+		if(empty($logged)) {
+			return $this->redirect(array('controller'=>'pages', 'action' => 'display', 'home'));
+		}
+
 		$exam_details = $this->exam_all_data($id);
 		$this->set(compact('exam_details'));
 	}

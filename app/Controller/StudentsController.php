@@ -18,6 +18,11 @@ class StudentsController extends AppController {
 	public $components = array('Paginator', 'Session');
 
 	public function add_students ($exam_id) {
+		$logged = $this->Session->read('logged');
+		if(empty($logged)) {
+			return $this->redirect(array('controller'=>'pages', 'action' => 'display', 'home'));
+		}
+
 		$exam = new ExamsController();
 		$exam_details = $exam->exam_all_data($exam_id);
 		$this->set(compact('exam_details'));
@@ -56,6 +61,11 @@ class StudentsController extends AppController {
 	}
 
 	public function delete_student ($id) {
+		$logged = $this->Session->read('logged');
+		if(empty($logged)) {
+			return $this->redirect(array('controller'=>'pages', 'action' => 'display', 'home'));
+		}
+
 		$this->Student->id = $id;
 		if (!$this->Student->exists($id)) {
 			throw new NotFoundException(__('Invalid quiz'));
