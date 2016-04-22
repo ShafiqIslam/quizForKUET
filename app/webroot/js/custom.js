@@ -1,3 +1,5 @@
+var timeout;
+
 $(document).ready(function() {
 	// Closes the sidebar menu
     $("#menu-close").click(function(e) {
@@ -69,8 +71,6 @@ $(document).ready(function() {
     disable_prev_btn(current_question);
     var current_question_id = "";
 
-    start_counting();
-
     $('.next_btn').click(function () {
         current_question_id = "#question_" + current_question;
         $(current_question_id).hide();
@@ -109,10 +109,15 @@ $(document).ready(function() {
         update_current_question_showing (current_question);
     });
 
-    $('#authenticate_student').submit(function (e) {
+    $('#submit_btn').click(function () {
+        $('#quiz_main_form').submit();
+    });
+
+    $('#quiz_main_form').on('submit', function (e) {
         e.preventDefault();
-        var data = $('#authenticate_student').serializeObject();
-        var url = $('#authenticate_student').attr('action');
+        clearTimeout(timeout);
+        var data = $('#quiz_main_form').serializeObject();
+        var url = $('#quiz_main_form').attr('action');
 
         $.ajax({
             type:'POST',
@@ -121,10 +126,47 @@ $(document).ready(function() {
             dataType: 'json',
             cache: false,
             success: function(response){
-                console.log(response);
+                if(response.success) {
+                    $('.quiz_submitted_overlay').show();
+                    $('#obtained_marks').html(response.total_obtained);
+                    $('#performance_msg').html(response.performance);
+                }
             },
             error: function(response) {
-                console.log(response);
+                alert("Something Bad Happened! Try again!!!");
+            }
+        });
+    });
+
+    $('#authenticate_submit_btn').click(function (e) {
+        e.preventDefault();
+        var data = $('#authenticate_student').serializeObject();
+        var url = $('#authenticate_student').attr('action');
+        var flash_class = "error";
+
+        $.ajax({
+            type:'POST',
+            url:url,
+            data: data,
+            dataType: 'json',
+            cache: false,
+            success: function(response){
+                if(response.success) {
+                    $('#student_id').val(response.student_id);
+                    $('.quiz_start_overlay').hide();
+                    start_counting();
+                    flash_class ="success";
+                }
+                alert(response.msg);
+                $('.flash_message').show();
+                $('#flashMessage').html(response.msg);
+                $('#flashMessage').removeClass("success error").addClass(flash_class);
+            },
+            error: function(response) {
+                alert("Something Bad Happened! Try again!!!");
+                $('.flash_message').show();
+                $('#flashMessage').html("Something Bad Happened! Try again!!!");
+                $('#flashMessage').removeClass("success error").addClass(flash_class);
             }
         });
     })
@@ -166,17 +208,21 @@ function start_counting() {
 
     var total_rem_seconds = (parseInt(rem_min) * 60) + parseInt(rem_sec);
 
-    total_rem_seconds -= 1;
+    total_rem_seconds -= 5;
     rem_sec = total_rem_seconds % 60;
     rem_min = (total_rem_seconds - rem_sec) / 60;
 
     if(rem_min<10) rem_min = "0" + rem_min;
     if(rem_sec<10) rem_sec = "0" + rem_sec;
     
+    if(total_rem_seconds <= 0) {
+        $('#quiz_main_form').submit();
+    }
+    
     $('#remaining_time_min').html(rem_min);
     $('#remaining_time_sec').html(rem_sec);
 
-    setTimeout(start_counting, 1000);
+    timeout = setTimeout(start_counting, 1000);
 }
 
 $(document).ready(function() {

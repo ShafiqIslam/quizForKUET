@@ -125,8 +125,72 @@ class ExamsController extends AppController {
 				)
 			);
 			if(!empty($data)) {
-				die(json_encode(array('success' => true, 'msg' => 'Authentication Successful. You can start now. Good luck.')));
+				$this->loadModel('Student');
+				$student_data = $this->Student->find('first', array(
+						'conditions' => array(
+							'Student.exam_id' => $exam_id,
+							'Student.roll' => $roll
+						)
+					)
+				);
+				$student_id = $student_data['Student']['id'];
+				if(!is_null($student_data['Student']['marks'])) {
+					die(json_encode(array('success' => false, 'msg' => 'Sorry!!! Seems like you have already attended the exam.' )));
+				}
+
+				die(json_encode(array('success' => true, 'student_id'=>$student_id, 'msg' => 'Authentication Successful. You can start now. Good luck.')));
 			} else die(json_encode(array('success' => false, 'msg' => 'Authentication Error!!! Please, try again.' )));
+		} else die(json_encode(array('success' => false, 'msg' => 'Invalid Request')));
+	}
+
+	public function evaluate($id) {
+		$this->autoRender = false;
+		$this->autoLayout = false;
+		header('Content-Type: application/json');
+
+		$corrected = 0;
+		$wronged = 0;
+		if($this->request->is('post')) {
+			if (!$this->Exam->exists($id)) {
+				die(json_encode(array('success' => false, 'msg' => 'Invalid Quiz')));
+			}
+
+			$no_ques = $this->request->data['total_question'];
+			for($i=0; $i<=$no_ques; $i++) {
+				$ques_name = "q_" . $i;
+				$cor_ans = "cor_" . $i;
+				if(!empty($this->request->data[$ques_name])) {
+					if($this->request->data[$ques_name] == $this->request->data[$cor_ans]) {
+						$corrected++;
+					} else {
+						$wronged++;
+					}
+				}
+			}
+
+			$total_obtained = $corrected * $this->request->data['per_ques'];
+			if(!empty($this->request->data['negate'])) {
+				$total_obtained -= $wronged * ( $this->request->data['per_ques'] / 4);
+			}
+
+			if($total_obtained < 0) $total_obtained = 0;
+
+			$this->loadModel('Student');
+			$this->Student->id = $this->request->data['student_id'];
+			$data["Student"]["marks"] = $total_obtained;
+			$this->Student->save($data);
+
+			$total_marks = $no_ques * $this->request->data['per_ques'];
+			if($total_obtained >= (0.8 * $total_marks) ) {
+				$performance = "Well Done. Carry On.";
+			} else if($total_obtained >= (0.6 * $total_marks)) {
+				$performance = "Good. You have places to improve.";
+			} else if($total_obtained >= (0.4 * $total_marks)) {
+				$performance = "Try to improve. We expect much better from yourself";
+			} else {
+				$performance = "Very Bad. We expect this is not gonna happen again.";
+			}
+			die(json_encode(array('success' => true, 'total_obtained' => $total_obtained, 'performance'=>$performance)));
 		} else die(json_encode(array('success' => false, 'msg' => 'Invalid Request')));
 	}
 
