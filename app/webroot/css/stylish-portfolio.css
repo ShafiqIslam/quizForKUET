@@ -54,7 +54,8 @@ header .greet{
     width: 100%;
     position: fixed;
     bottom: 80px;
-    //padding: 20px;
+    padding-bottom: 7%;
+    overflow: hidden;
 }
 
 
@@ -72,7 +73,7 @@ ul.slides li {
   background: rgba(0, 204, 102, 0.5);
   padding: 3% 10% 10% 10%;
   color: #fff;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   display: flex;
   align-content: center;
@@ -103,7 +104,7 @@ ul.slides li:first-child {
   opacity: 1;
 }
 .slide-content h3{
-    //margin-top: -20px;
+    font-size: 35px;
 }
 
 
@@ -1067,6 +1068,49 @@ table td a{
     margin-top: 50px;
     background: url(../img/clock_bg.png) no-repeat;
     background-size: 352px 100px;
+}
+
+
+
+/*-------------respnsive CSS-----------*/
+@media screen and (max-device-width: 1024px){
+    .welcome_section h1 {
+        font-size: 35px;
+    }
+    .welcome_section h2 {
+        font-size: 30px;
+    }
+    .slide-content h3 {
+        font-size: 30px;
+        margin-top: -6px;
+    }
+    ul.slides li{
+        font-size: 14px;
+    }
+    .flash_message{
+        margin-top: 6%;
+        width: 80%;
+    }
+    .welcome_quiz_page .user_section{
+        margin-top: 15%;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .slide-content h3 {
+        font-size: 30px!;
+        margin-top: -6px;
+    }
+    ul.slides li {
+        font-size: 17px;
+    }
+    .flash_message{
+        margin-top: 6%;
+        width: 80%;
+    }
+    .welcome_quiz_page .user_section{
+        margin-top: 15%;
+    }
 }
 
 @media print {

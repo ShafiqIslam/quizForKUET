@@ -23,7 +23,7 @@
                             </div>
                      <?php } ?>
                  </div>
-                <div class="col-sm-6 pull right">
+                <div class="col-sm-6 ">
                     <ul id="slideshow" class="slides">
                         <li data-duration="5000" class="active">
                             <div class="slide-content">
