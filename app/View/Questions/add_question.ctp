@@ -67,15 +67,16 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h2 class="text-center">Add Question List</h2>
                                 </div>
-                                <div class="modal-body custom_body">  
-                                   <table class="table table-responsive table-hover">
+                                <div class="modal-body custom_body"> 
+                                    <h2 class="text-center">My Quiz List</h2> 
+                                   <table class="question_list_table table table-responsive table-hover">
                                         <th class="text-center">Question Name</th>
                                         <th class="text-center">Action</th>
                                         <?php if(!empty($exam_details['Question'])) { ?>
                                             <?php foreach($exam_details['Question'] as $key => $item) {?>
                                                <tr>
-                                                   <td><?php echo $item['question'];?></td>
-                                                   <td class="add_question_action pull-right">
+                                                   <td style="width: 75%;"><?php echo $item['question'];?></td>
+                                                   <td class="add_question_action">
                                                        <?php echo $this->Html->link(__('Edit'), array('action' => 'edit_question', $item['id']), array( 'class' => 'btn btn-warning')); ?>
                                                        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_question', $item['id']), array( 'class' => 'btn btn-warning'), __('Are you sure you want to delete # %s?', $item['id'])); ?>
                                                    </td>

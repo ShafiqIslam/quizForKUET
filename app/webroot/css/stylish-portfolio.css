@@ -312,6 +312,7 @@ button:focus{
 }
 .form-group:last-child{
     padding-bottom: 60px;
+    display: block;
 }
 
 .form-control {
@@ -741,15 +742,44 @@ button:focus{
     text-indent: 15px;
     text-decoration: none;
 }
+table .question_list{
+    width: 75%;
+}
+.question_list_table tr td{
+    line-height: 45px;
+}
+
 .my_quiz_list{
     max-height: 400px;
     overflow-y: scroll;
     overflow-x: hidden;
-    margin-left: -3.5%;
+}
+.my_quiz_list{
+    background: #fff;
+}
+.my_quiz_list caption{
+    color: #FFF;
+    background: rgb(0, 204, 102);
+    font-size: 25px;
+    padding: 15px 0px;
+}
+
+.table > tbody > tr > td{
+    line-height: 45px;
+}
+
+.my_quiz_list th{
+    color: #000;
+    font-size: 20px;
+    background: #ededed;
 }
 
 .quiz_exam ul{
     display: none;
+}
+.my_quiz_list td b{
+    font-size: 17px;
+    line-height: 42px;
 }
 
 
