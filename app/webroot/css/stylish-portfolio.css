@@ -10,6 +10,13 @@
     font-family: Lucida Calligraphy;
     src: url(../fonts/custom/LCALLIG.TTF);
 }
+
+@font-face {
+    font-family: 'LCD-BOLD';
+    src: url('../fonts/digital-7/digital-7.ttf');
+}
+
+
 html,
 body {
     width: 100%;
@@ -144,16 +151,13 @@ button:focus{
 
 .time_counter{
     text-align: center;
-    border: 3px solid #10DA10;
-    border-radius: 50px;
-    padding: 15px 0px;
+    padding: 25px 0px;
     margin-top: -2px;
     margin-bottom: 0px;
-    color: #fff;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 30px;
-    width: 80%;
+    color: #820909;
+    font-size: 85px;
+    font-family: 'LCD-BOLD';
+    line-height: 42px;
 }
 
 
@@ -1013,6 +1017,28 @@ table td a{
     left: 35.5%;
 }
 
+.img_btn img{
+    width: 100%;
+    height: 120px;
+    transition: all .5s;
+}
+
+.next_btn img:hover{
+    transform: translate(20px);
+    transition: all .5s;
+}
+
+.prev_btn img:hover{
+    transform: translate(-20px);
+    transition: all .5s;
+}
+
+.timer_bg{
+    margin-top: 50px;
+    background: url(../img/clock_bg.png) no-repeat;
+    background-size: 352px 100px;
+}
+
 @media print {
     .no_print {display: none;}
     .flash_message {display: none;}
@@ -1020,5 +1046,3 @@ table td a{
     .toggle {display: none;}
     .print_this {display: block;}
 }
-
-.time_counter

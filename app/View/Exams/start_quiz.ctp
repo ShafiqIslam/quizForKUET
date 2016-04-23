@@ -5,7 +5,7 @@ $starting_at = new DateTime($exam['starting_at']);
 $ending_at = new DateTime($exam['ending_at']);
 ?>
 
-<?php if($now >= $starting_at && $now <= $ending_at) { ?>
+<?php if(1) { ?>
     <section id="quiz_wrapper">
         <div class="container quiz_inner">
             <div class="row">
@@ -59,9 +59,10 @@ $ending_at = new DateTime($exam['ending_at']);
                     <div class="quiz_direction user_section">
                         <div class="col-sm-2">
                             <!--<button type="reset" class="btn btn_user btn-2 btn-2a pull-left">RESTART</button>-->
-                            <button type="button" class="btn btn_user btn-2 btn-2a prev_btn pull-left">PREVIOUS</button>
+                            <!--<button type="button" class="btn btn_user btn-2 btn-2a prev_btn pull-left">PREVIOUS</button>-->
+                            <button type="button" class="btn btn_user prev_btn pull-left img_btn"><img src="<?php echo $this->webroot?>img/prev.png"></button>
                         </div>
-                        <div class="col-sm-3 col-sm-offset-3">
+                        <div class="col-sm-3 col-sm-offset-3 timer_bg">
                             <span class="text-center">
                                 <h3 class="time_counter">
                                     <span id="remaining_time_min"><?php echo $rem_time['min'];?></span>
@@ -73,7 +74,8 @@ $ending_at = new DateTime($exam['ending_at']);
                         <div class="col-sm-2 col-sm-offset-2">
                             <span class="pull-right">
                                 <input type="hidden" name="current_question" value="0">
-                                <button type="button" class="btn btn_user btn-2 btn-2a next_btn">NEXT</button>
+                                <!--<button type="button" class="btn btn_user btn-2 btn-2a next_btn">NEXT</button>-->
+                                <button type="button" class="btn btn_user next_btn img_btn pull-right"><img src="<?php echo $this->webroot?>img/next.png"></button>
                             </span>
                         </div>
                     </div>
@@ -91,7 +93,7 @@ $ending_at = new DateTime($exam['ending_at']);
         <button class="flash_close_btn"><span><i class="fa fa-times fa-2x"></i></span></button>
     </div>
 
-    <div class="quiz_overlay quiz_start_overlay" style="">
+    <div class="quiz_overlay quiz_start_overlay" style="display: none;">
         <form class="form-horizontal col-sm-4" id="authenticate_student" role="form" method="post" action="<?php echo $this->webroot?>exams/authenticate_student/<?php echo $exam['id'];?>" autocomplete="off">
             <h1>STUDENT'S LOGIN</h1>
             <hr>
@@ -153,7 +155,7 @@ $ending_at = new DateTime($exam['ending_at']);
 
 <?php } else if ($now > $ending_at) { ?>
 
-    <div class="quiz_overlay quiz_not_started_overlay">
+    <div class="quiz_overlay quiz_not_started_overlay" style="display: none;">
         <div class="quiz_star_notify quiz_finished">
             <h1>Sorry Buddy.</h1>
             <h2 class="finished_exam_h2">Exam Finished. You are late!</h2>
