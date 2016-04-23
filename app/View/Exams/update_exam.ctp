@@ -29,7 +29,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="name">Starting At:</label>
                             <div class="col-sm-9">
-                                <input type="datetime-local" name="data[Exam][starting_at]" value="<?php echo $this->request->data['Exam']['starting_at'];?>" class="form-control" id="starting_at" placeholder="Begins In">
+                                <input type="datetime-local" name="data[Exam][starting_at]" value="<?php echo str_replace(" ","T",$this->request->data['Exam']['starting_at']) ;?>" class="form-control" id="starting_at" placeholder="Begins In">
                             </div>
 
                         </div>
