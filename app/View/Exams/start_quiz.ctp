@@ -61,7 +61,7 @@ $ending_at = new DateTime($exam['ending_at']);
                             <!--<button type="reset" class="btn btn_user btn-2 btn-2a pull-left">RESTART</button>-->
                             <button type="button" class="btn btn_user btn-2 btn-2a prev_btn pull-left">PREVIOUS</button>
                         </div>
-                        <div class="col-sm-2 col-sm-offset-2">
+                        <div class="col-sm-3 col-sm-offset-3">
                             <span class="text-center">
                                 <h3 class="time_counter">
                                     <span id="remaining_time_min"><?php echo $exam['time'];?></span>
@@ -70,7 +70,7 @@ $ending_at = new DateTime($exam['ending_at']);
                                 </h3>
                             </span>
                         </div>
-                        <div class="col-sm-4 col-sm-offset-2">
+                        <div class="col-sm-2 col-sm-offset-2">
                             <span class="pull-right">
                                 <input type="hidden" name="current_question" value="0">
                                 <button type="button" class="btn btn_user btn-2 btn-2a next_btn">NEXT</button>
@@ -126,7 +126,7 @@ $ending_at = new DateTime($exam['ending_at']);
     <div class="quiz_overlay quiz_submitted_overlay" style="display: none">
         <div class="quiz_star_notify stu_result">
             <h1>You have achieved</h1>
-            <h2><span id="obtained_marks"></span> out of <?php echo $exam['marks_per_ques'] * count($questions);?></h2>
+            <h2><span id="obtained_marks"></span> <span class="out_of"><i>out of</i></span> <?php echo $exam['marks_per_ques'] * count($questions);?></h2>
             <h3 id="performance_msg"></h3>
         </div>
     </div>
@@ -152,9 +152,9 @@ $ending_at = new DateTime($exam['ending_at']);
 <?php } else if ($now > $ending_at) { ?>
 
     <div class="quiz_overlay quiz_not_started_overlay">
-        <div class="quiz_star_notify">
+        <div class="quiz_star_notify quiz_finished">
             <h1>Sorry Buddy.</h1>
-            <h2 class="finished_exam_h2">Exam Finished. You are late.</h2>
+            <h2 class="finished_exam_h2">Exam Finished. You are late!</h2>
         </div>
     </div>
 
