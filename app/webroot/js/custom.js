@@ -76,6 +76,12 @@ $(document).ready(function() {
     disable_prev_btn(current_question);
     var current_question_id = "";
 
+    var exam_running = $('input[name=exam_running]').val();
+    console.log(exam_running);
+    if(exam_running==1) {
+        start_counting();
+    }
+
     $('.next_btn').click(function () {
         current_question_id = "#question_" + current_question;
         $(current_question_id).hide();
@@ -159,7 +165,7 @@ $(document).ready(function() {
                 if(response.success) {
                     $('#student_id').val(response.student_id);
                     $('.quiz_start_overlay').hide();
-                    start_counting();
+                    //start_counting();
                     flash_class ="success";
                 }
                 alert(response.msg);
@@ -212,8 +218,9 @@ function start_counting() {
     var rem_sec = $('#remaining_time_sec').html();
 
     var total_rem_seconds = (parseInt(rem_min) * 60) + parseInt(rem_sec);
+    console.log(total_rem_seconds);
 
-    total_rem_seconds -= 5;
+    total_rem_seconds -= 1;
     rem_sec = total_rem_seconds % 60;
     rem_min = (total_rem_seconds - rem_sec) / 60;
 
@@ -221,7 +228,12 @@ function start_counting() {
     if(rem_sec<10) rem_sec = "0" + rem_sec;
     
     if(total_rem_seconds <= 0) {
-        $('#quiz_main_form').submit();
+        var student_id = $('input[name=student_id]').val();
+        if(student_id!="") {
+            $('#quiz_main_form').submit();
+        } else {
+            window.location.reload();
+        }
     }
     
     $('#remaining_time_min').html(rem_min);

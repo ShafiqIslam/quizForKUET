@@ -64,9 +64,9 @@ $ending_at = new DateTime($exam['ending_at']);
                         <div class="col-sm-2 col-sm-offset-2">
                             <span class="text-center">
                                 <h3 class="time_counter">
-                                    <span id="remaining_time_min"><?php echo $exam['time'];?></span>
+                                    <span id="remaining_time_min"><?php echo $rem_time['min'];?></span>
                                     :
-                                    <span id="remaining_time_sec">00</span>
+                                    <span id="remaining_time_sec"><?php echo $rem_time['sec'];?></span>
                                 </h3>
                             </span>
                         </div>
@@ -83,6 +83,8 @@ $ending_at = new DateTime($exam['ending_at']);
         </div>
         <!-- /.container -->
     </section>
+
+    <input type="hidden" name="exam_running" value="1">
 
     <div class="container flash_message" style="display: none">
         <div id="flashMessage" class=""></div>
