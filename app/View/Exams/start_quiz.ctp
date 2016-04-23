@@ -5,7 +5,7 @@ $starting_at = new DateTime($exam['starting_at']);
 $ending_at = new DateTime($exam['ending_at']);
 ?>
 
-<?php if(1) { ?>
+<?php if($now >= $starting_at && $now <= $ending_at) { ?>
     <section id="quiz_wrapper">
         <div class="container quiz_inner">
             <div class="row">
@@ -138,6 +138,7 @@ $ending_at = new DateTime($exam['ending_at']);
     <?php echo $this->Html->script(array('svgcheckbx')); ?>
 
 <?php } else if($now < $starting_at) { ?>
+
     <?php echo $this->Html->script(array('TimeCircles'));?>
     <?php echo $this->Html->css(array('TimeCircles'));?>
 
@@ -155,7 +156,7 @@ $ending_at = new DateTime($exam['ending_at']);
 
 <?php } else if ($now > $ending_at) { ?>
 
-    <div class="quiz_overlay quiz_not_started_overlay" style="display: none;">
+    <div class="quiz_overlay quiz_not_started_overlay">
         <div class="quiz_star_notify quiz_finished">
             <h1>Sorry Buddy.</h1>
             <h2 class="finished_exam_h2">Exam Finished. You are late!</h2>
