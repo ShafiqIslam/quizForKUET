@@ -29,8 +29,8 @@
 								</a>
 							</td>
 							<td class="add_question_action">
-                               <?php echo $this->Html->link(__('Edit'), array('action' => 'edit_question', $item['id']), array( 'class' => 'btn btn-warning')); ?>
-                               <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_question', $item['id']), array( 'class' => 'btn btn-warning'), __('Are you sure you want to delete # %s?', $item['id'])); ?>
+                               <?php echo $this->Html->link(__('Edit'), array('controller' => 'exams', 'action' => 'update_exam', $item['id']), array( 'class' => 'btn btn-warning')); ?>
+                               <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'exams', 'action' => 'delete_exam', $item['id']), array( 'class' => 'btn btn-warning'), __('Are you sure you want to delete # %s? Deleting quiz will delete all the students and questions assigned to it.', $item['id'])); ?>
                            </td>
 						</tr>
 						<?php } ?>

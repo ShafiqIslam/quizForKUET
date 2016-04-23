@@ -66,7 +66,7 @@ class ExamsController extends AppController {
 			throw new NotFoundException(__('Invalid quiz'));
 		}
 		$this->request->allowMethod('post', 'delete');
-		if ($this->Exam->delete()) {
+		if ($this->Exam->delete($id, true)) {
 			$this->Session->setFlash(__('Exam Deleted.'), 'default', array('class' => 'success'));
 		} else {
 			$this->Session->setFlash(__('Exam can\'t be deleted right now.'), 'default', array('class' => 'error'));

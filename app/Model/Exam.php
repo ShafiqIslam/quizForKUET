@@ -43,7 +43,7 @@ class Exam extends AppModel {
 		'Question' => array(
 			'className' => 'Question',
 			'foreignKey' => 'exam_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -56,7 +56,7 @@ class Exam extends AppModel {
 		'Student' => array(
 			'className' => 'Student',
 			'foreignKey' => 'exam_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

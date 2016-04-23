@@ -21,7 +21,8 @@ class Student extends AppModel {
 			'foreignKey' => 'exam_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'dependent' => true
 		)
 	);
 }
