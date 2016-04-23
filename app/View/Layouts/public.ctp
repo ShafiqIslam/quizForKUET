@@ -41,9 +41,10 @@
 
 <body>
     <?php $logged = $this->Session->read('logged'); ?>
+    <?php $action = $this->params['action']; ?>
 
     <!-- Navigation -->
-    <?php if(!empty($logged)) { ?>
+    <?php if(!empty($logged) && $action!="start_quiz") { ?>
         <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">

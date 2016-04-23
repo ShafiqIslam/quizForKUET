@@ -6,6 +6,7 @@ $ending_at = new DateTime($exam['ending_at']);
 ?>
 
 <?php if($now >= $starting_at && $now <= $ending_at) { ?>
+<?php //if(1) { ?>
     <section id="quiz_wrapper">
         <div class="container quiz_inner">
             <div class="row">
@@ -159,7 +160,7 @@ $ending_at = new DateTime($exam['ending_at']);
     <div class="quiz_overlay quiz_not_started_overlay">
         <div class="quiz_star_notify quiz_finished">
             <h1>Sorry Buddy.</h1>
-            <h2 class="finished_exam_h2">Exam Finished. You are late!</h2>
+            <h2 class="finished_exam_h2">Exam Finished. You are late! <i class="fa fa-frown-o" aria-hidden="true"></i></h2>
         </div>
     </div>
 
