@@ -94,7 +94,21 @@ class ExamsController extends AppController {
 		$exam_details = $this->exam_all_data($exam_id);
 		$questions = $exam_details['Question'];
 		$exam = $exam_details['Exam'];
-		$this->set(compact('questions', 'exam'));
+
+		$now = new DateTime();
+		$starting_at = new DateTime($exam['starting_at']);
+		$ending_at = new DateTime($exam['ending_at']);
+
+		if($now > $starting_at) {
+			$diff = $ending_at->diff($now);
+			$rem_time['min'] = $diff->i;
+			$rem_time['sec'] = $diff->s;
+		} else {
+			$rem_time['min'] = $exam['time'];
+			$rem_time['sec'] = 0;
+		}
+
+		$this->set(compact('questions', 'exam', 'rem_time'));
 	}
 
 	public function results($id){
