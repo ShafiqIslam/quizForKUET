@@ -8,6 +8,7 @@ $ending_at = new DateTime($exam['ending_at']);
 <?php if($now >= $starting_at && $now <= $ending_at) { ?>
 <?php //if(1) { ?>
     <section id="quiz_wrapper">
+        <div class="loader"></div>
         <div class="container quiz_inner">
             <div class="row">
                 <div class="col-lg-12">
@@ -58,12 +59,12 @@ $ending_at = new DateTime($exam['ending_at']);
 
 
                     <div class="quiz_direction user_section">
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 col-xs-3">
                             <!--<button type="reset" class="btn btn_user btn-2 btn-2a pull-left">RESTART</button>-->
                             <!--<button type="button" class="btn btn_user btn-2 btn-2a prev_btn pull-left">PREVIOUS</button>-->
                             <button type="button" class="btn btn_user prev_btn pull-left img_btn"><img src="<?php echo $this->webroot?>img/prev.png"></button>
                         </div>
-                        <div class="col-sm-3 col-sm-offset-3 timer_bg">
+                        <div class="col-sm-3 col-xs-6 col-sm-offset-3 col-xs-offset-5 timer_bg">
                             <span class="text-center">
                                 <h3 class="time_counter">
                                     <span id="remaining_time_min"><?php echo $rem_time['min'];?></span>
@@ -72,7 +73,7 @@ $ending_at = new DateTime($exam['ending_at']);
                                 </h3>
                             </span>
                         </div>
-                        <div class="col-sm-2 col-sm-offset-2">
+                        <div class="col-sm-2 col-xs-3 col-sm-offset-2">
                             <span class="pull-right">
                                 <input type="hidden" name="current_question" value="0">
                                 <!--<button type="button" class="btn btn_user btn-2 btn-2a next_btn">NEXT</button>-->

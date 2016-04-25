@@ -1,6 +1,11 @@
 var timeout;
 
 $(document).ready(function() {
+
+    $(window).load(function(){
+        $(".loader").fadeOut("slow");
+    });
+    
 	// Closes the sidebar menu
     $("#menu-close").click(function(e) {
         e.preventDefault();
