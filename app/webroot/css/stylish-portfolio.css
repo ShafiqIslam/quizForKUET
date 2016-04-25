@@ -53,8 +53,8 @@ header .greet{
 .main_content {
     width: 100%;
     position: fixed;
-    bottom: 80px;
-    padding-bottom: 7%;
+    bottom: 0px;
+    padding-bottom: 1%;
     overflow: hidden;
 }
 
@@ -73,7 +73,7 @@ ul.slides li {
   background: rgba(0, 204, 102, 0.5);
   padding: 3% 10% 10% 10%;
   color: #fff;
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: bold;
   display: flex;
   align-content: center;
@@ -270,11 +270,11 @@ button:focus{
 }
 
 .welcome_section h1{
-    font-size: 47px;
+    font-size: 3.3vw;
 }
 
 .welcome_section h2{
-    font-size: 45px;
+    font-size: 2.6vw;
 }
 
 /* About */
@@ -1073,19 +1073,13 @@ table td a{
 
 
 /*-------------respnsive CSS-----------*/
-@media screen and (max-width: 1024px){
-    .welcome_section h1 {
-        font-size: 35px;
-    }
-    .welcome_section h2 {
-        font-size: 30px;
-    }
+@media screen and (max-width: 1024px) and (min-width: 960px){
     .slide-content h3 {
         font-size: 30px;
         margin-top: -6px;
     }
     ul.slides li{
-        font-size: 14px;
+        font-size: 1.1em;
     }
     .flash_message{
         margin-top: 6%;
@@ -1102,7 +1096,7 @@ table td a{
         margin-top: -6px;
     }
     ul.slides li {
-        font-size: 17px;
+        font-size: 1em;
     }
     .flash_message{
         margin-top: 6%;
